@@ -59,7 +59,12 @@ del scrape de hoy): Airwrap Coanda 2x $1.049.990 (antes $1.490.990), Airstrait $
 (antes $999.990), Airwrap i.d. $859.990, Coanda 2x Jasper Plum $999.990, Supersonic Nural
 $699.990, Sérum Chitosan $89.990, Medicube AGE-R Pro Mini $159.990, Set 4 Pinzas $99.990.
 Marcas: Color Wow · Crazy Color · Osmo · Dyson Hair · Dyson Home · Medicube · GHD.
-El branding es siempre **Beauty Hits** (empresa nueva). Las fotos siguen siendo placeholders.
+El branding es siempre **Beauty Hits** (empresa nueva).
+
+**Fotos de producto reales** (2026-06-10): descargadas de lpb.cl (tienda del cliente, con su
+autorización) a `img/` — 10 fotos de producto que reemplazan los placeholders de Unsplash en
+todas las grillas. Las fotos de *lifestyle* (heros, categorías, UGC) siguen siendo Unsplash
+porque lpb.cl no tiene equivalentes; reemplazar cuando el cliente entregue fotografía de campaña.
 
 ## Validación de fidelidad (2026-06-10)
 Se capturaron screenshots móviles reales de los 4 sitios fuente y se compararon contra las variantes:
