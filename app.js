@@ -3,14 +3,14 @@
 // ---- Product data (fake) ----
 const CLP = n => '$' + n.toLocaleString('es-CL');
 const products = [
-  { brand: 'Dyson', name: 'Airwrap™ Coanda 2x', price: 599990, was: 679990, rating: 4.9, reviews: 312, badge: 'Best Seller', img: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Dyson', name: 'Supersonic™ Secador', price: 449990, was: null, rating: 4.8, reviews: 198, badge: 'Best Seller', img: 'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'GHD', name: 'Platinum+ Plancha', price: 269990, was: 299990, rating: 4.7, reviews: 156, badge: 'Sale', img: 'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Color Wow', name: 'Dream Coat Anti-Frizz', price: 34990, was: null, rating: 4.9, reviews: 421, badge: null, img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Medicube', name: 'Age-R Booster Pro', price: 189990, was: 219990, rating: 4.6, reviews: 88, badge: 'Sale', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Osmo', name: 'Blinding Shine Serum', price: 18990, was: null, rating: 4.8, reviews: 203, badge: null, img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Dyson', name: 'Corrale™ Plancha', price: 379990, was: 419990, rating: 4.7, reviews: 134, badge: 'Sale', img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80' },
-  { brand: 'Color Wow', name: 'Money Masque', price: 29990, was: null, rating: 4.9, reviews: 167, badge: 'Best Seller', img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Airwrap™ Coanda 2x™ – Liso + Ondulado (Ceramic Pink/Rose Gold)', price: 1049990, was: 1490990, rating: 4.9, reviews: 312, badge: 'Best Seller', img: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Airstrait™ (Ceramic Pink/Rose Gold)', price: 679990, was: 999990, rating: 4.8, reviews: 198, badge: 'Best Seller', img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Airwrap i.d.™ – Liso + Ondulado (Ceramic Pink/Rose Gold)', price: 859990, was: 1390990, rating: 4.7, reviews: 156, badge: null, img: 'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Airwrap™ Coanda 2x™ (Jasper Plum)', price: 999990, was: 1490990, rating: 4.9, reviews: 87, badge: 'Último lanzamiento', img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Supersonic™ Nural – Secador (Pink/Rose Gold)', price: 699990, was: 999990, rating: 4.8, reviews: 203, badge: null, img: 'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Sérum Chitosan™ Post-Style', price: 89990, was: null, rating: 4.8, reviews: 64, badge: null, img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Medicube', name: 'AGE-R Booster Pro Mini (Blanco)', price: 159990, was: null, rating: 4.6, reviews: 88, badge: null, img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80' },
+  { brand: 'Dyson', name: 'Set de 4 Pinzas para el Cabello', price: 99990, was: 109990, rating: 4.9, reviews: 167, badge: 'Oferta', img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80' },
 ];
 
 // ---- Render products ----
