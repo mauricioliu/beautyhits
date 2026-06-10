@@ -43,11 +43,14 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 | **E — Quiz** | `variants/e.html` | El hero **es un test interactivo** "¿Cuál es para ti?" que recomienda un producto. Pastel, blobs, cards color-block. Estructura única. Fuentes Bricolage Grotesque + Figtree. |
 | **F — Pop** | `variants/f.html` | Maximalismo neo-brutalista: bloques teal/crema, sombras duras, stickers rotados, marquee, antes/después, #RealHairDay. Fuentes Darker Grotesque + Hanken Grotesk. |
 
-Variantes A–C nacen de **lpb.cl** (lujo minimalista). Variantes D–F nacen de **dropbe.pe** (DTC joven, trust badges, quiz, emojis).
+| **G — Blush** | `variants/g.html` | Rosa pastel muy redondeado (recreación de una imagen de referencia del cliente): hero panel rosa + foto, trust badges, "Nuestras marcas", Best Sellers en cards blush, banda de tecnología, 3 cards de categoría (peach/lilac/mint). Plus Jakarta Sans. |
+
+Variantes A–C nacen de **lpb.cl** (lujo minimalista). D–F nacen de **dropbe.pe** (DTC joven). G recrea una **imagen de referencia** (estilo rosa blush).
 
 Links directos:
 - https://mauricioliu.github.io/beautyhits/?variant=a · b · c (estilo LPB)
 - https://mauricioliu.github.io/beautyhits/?variant=d · e · f (estilo DropBe)
+- https://mauricioliu.github.io/beautyhits/?variant=g (rosa blush, según imagen)
 
 ## Veredicto del cliente
 > _Pendiente_ — completar tras revisión: ¿qué variante gana? ¿qué secciones mezclar?
