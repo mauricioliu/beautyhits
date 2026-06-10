@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE — BeautyHits · Variant D "Drop" (throwaway). DTC homage, DropBe-inspired. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeautyHits — Es momento de brillar.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#15231f; --soft:#5c6b66; --paper:#ffffff; --mint:#ecfbf7; --mint-2:#d6f4ec;
+  --teal:#0fb3a4; --teal-d:#0a8f83; --gold:#e3a24c; --line:#e6efec; --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+.disp{font-family:'Fredoka',sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Fredoka';font-weight:600;font-size:.95rem;
+  padding:14px 28px;border-radius:50px;cursor:pointer;border:none;transition:.22s}
+.btn--teal{background:var(--teal);color:#fff}.btn--teal:hover{background:var(--teal-d);transform:translateY(-2px)}
+.btn--ink{background:var(--ink);color:#fff}.btn--ink:hover{transform:translateY(-2px)}
+.btn--ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}.btn--ghost:hover{background:var(--ink);color:#fff}
+
+/* promo */
+.promo{background:var(--ink);color:#fff;text-align:center;font-size:.82rem;padding:9px;font-weight:500}
+.promo b{color:var(--gold)}
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr__in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+.nav{display:flex;gap:22px;font-weight:600;font-size:.92rem}
+.nav a:hover{color:var(--teal)}
+.logo{justify-self:center;font-family:'Fredoka';font-weight:700;font-size:1.45rem;letter-spacing:-.01em}
+.logo b{color:var(--teal)}
+.hdr__r{justify-self:end;display:flex;gap:14px;align-items:center;font-weight:600;font-size:.92rem}
+.pill{background:var(--mint);color:var(--teal-d);padding:7px 15px;border-radius:50px}
+
+/* hero */
+.hero{background:radial-gradient(120% 120% at 80% 0%,var(--mint) 0%,#fff 55%);overflow:hidden}
+.hero__in{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:50px 24px 40px;max-width:var(--maxw);margin:0 auto}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--mint-2);color:var(--teal-d);
+  font-weight:600;font-size:.82rem;padding:7px 14px;border-radius:50px;box-shadow:0 4px 14px rgba(15,179,164,.1)}
+.hero h1{font-family:'Fredoka';font-weight:600;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;letter-spacing:-.02em;margin:18px 0 0}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero__sub{font-size:1.12rem;color:var(--soft);max-width:430px;margin:18px 0 26px;line-height:1.55}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero__rating{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:.9rem;color:var(--soft);font-weight:500}
+.hero__rating b{color:var(--gold)}
+.hero__media{position:relative}
+.hero__media>img{width:100%;border-radius:28px;aspect-ratio:4/4.4;object-fit:cover}
+.hero__chip{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 12px 30px rgba(21,35,31,.12);font-weight:600;font-size:.86rem}
+.hero__chip--1{top:22px;left:-14px}.hero__chip--2{bottom:30px;right:-12px}
+.hero__chip small{display:block;color:var(--soft);font-weight:500;font-size:.74rem}
+.hero__chip .em{font-size:1.3rem;float:left;margin-right:9px}
+
+/* trust */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.trust__in{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--maxw);margin:0 auto}
+.trust__i{padding:22px 18px;display:flex;align-items:center;gap:12px;justify-content:center;border-right:1px solid var(--line);font-weight:600;font-size:.9rem}
+.trust__i:last-child{border-right:none}
+.trust__i .em{font-size:1.5rem}
+.trust__i small{display:block;color:var(--soft);font-weight:500;font-size:.76rem}
+
+/* section */
+.sec{padding:72px 0}
+.sec__head{text-align:center;max-width:600px;margin:0 auto 44px}
+.sec__head .eye{color:var(--teal);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+.sec__head h2{font-family:'Fredoka';font-weight:600;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;letter-spacing:-.01em;margin-top:10px}
+.sec__head p{color:var(--soft);margin-top:12px;font-size:1.05rem}
+
+/* showcase split */
+.show{background:var(--mint);border-radius:32px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;align-items:center}
+.show.rev{direction:rtl}.show.rev>*{direction:ltr}
+.show__img{background-size:cover;background-position:center;min-height:430px}
+.show__body{padding:clamp(30px,5vw,60px)}
+.show__body .tagk{color:var(--teal-d);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.show__body h3{font-family:'Fredoka';font-weight:600;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.05;margin:10px 0 14px}
+.show__body p{color:var(--soft);line-height:1.6;margin-bottom:18px}
+.show__feat{list-style:none;margin-bottom:24px}
+.show__feat li{padding:7px 0;font-weight:500;display:flex;gap:10px;align-items:center}
+.show__feat li::before{content:"✓";color:#fff;background:var(--teal);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;flex:none}
+.show__price{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.show__price b{font-family:'Fredoka';font-size:2rem;font-weight:600}
+.show__price s{color:var(--soft)}
+.show__price .save{background:var(--gold);color:#fff;font-size:.74rem;font-weight:700;padding:4px 10px;border-radius:50px}
+.show+.show{margin-top:28px}
+
+/* why grid */
+.why{background:var(--ink);color:#fff;border-radius:32px;padding:clamp(40px,6vw,72px) 30px}
+.why__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:36px}
+.why__c{text-align:center}
+.why__c .em{font-size:2.4rem}
+.why__c h4{font-family:'Fredoka';font-weight:600;font-size:1.15rem;margin:12px 0 8px}
+.why__c p{color:#b8c6c1;font-size:.9rem;line-height:1.5}
+
+/* UGC */
+.ugc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.ugc__c{border-radius:22px;overflow:hidden;position:relative;aspect-ratio:3/4}
+.ugc__c img{width:100%;height:100%;object-fit:cover}
+.ugc__c span{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);font-weight:600;font-size:.78rem;padding:6px 12px;border-radius:50px}
+
+/* newsletter */
+.nl{background:linear-gradient(120% 120% at 0% 0%,var(--teal) 0%,var(--teal-d) 100%);color:#fff;border-radius:32px;padding:clamp(40px,6vw,70px);text-align:center}
+.nl h2{font-family:'Fredoka';font-weight:600;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:-.01em}
+.nl p{opacity:.9;margin:12px 0 26px;font-size:1.05rem}
+.nl form{display:flex;gap:10px;max-width:440px;margin:0 auto;background:#fff;border-radius:50px;padding:6px}
+.nl input{flex:1;border:none;background:transparent;padding:0 18px;font-family:'Hanken Grotesk';font-size:.95rem;outline:none;color:var(--ink)}
+.nl__msg{margin-top:14px;font-weight:600;min-height:22px}
+
+/* footer */
+.ft{padding:56px 0 28px}
+.ft__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+.ft .logo{justify-self:start;margin-bottom:12px}
+.ft p,.ft a{display:block;color:var(--soft);font-size:.9rem;margin-bottom:9px}
+.ft a:hover{color:var(--teal)}
+.ft h4{font-family:'Fredoka';font-weight:600;margin-bottom:14px;font-size:1rem;color:var(--ink)}
+.ft__bot{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:34px;padding-top:18px;color:var(--soft);font-size:.82rem;flex-wrap:wrap;gap:8px}
+.ft__bot .proto{color:var(--teal)}
+
+@media(max-width:900px){
+  .hero__in,.show,.ft__grid{grid-template-columns:1fr}
+  .trust__in{grid-template-columns:1fr 1fr}.trust__i:nth-child(2){border-right:none}
+  .why__grid,.ugc__grid{grid-template-columns:1fr 1fr}
+  .nav,.hdr__r .pill{display:none}.hdr__in{grid-template-columns:auto 1fr auto}
+  .show__img{min-height:280px}
+}
+</style>
+</head>
+<body>
+<div class="promo">🚚 Envío gratis a todo Chile · 💳 Hasta <b>12 cuotas sin interés</b> · ✨ -10% con <b>HITS10</b></div>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <nav class="nav"><a href="#">Inicio</a><a href="#">Secadores</a><a href="#">Moldeadores</a><a href="#">¿Cuál es para mí?</a></nav>
+    <a href="#" class="logo">Beauty<b>Hits</b></a>
+    <div class="hdr__r"><span class="pill">Ingresar</span><a href="#">🛍️ Bolsa (0)</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__in">
+    <div>
+      <span class="hero__badge">✨ Las herramientas favoritas de +1.200 clientas</span>
+      <h1 class="disp">Es momento<br/>de ser, de <em>brillar.</em></h1>
+      <p class="hero__sub">Herramientas inteligentes para peinarte fácil, rápido y sin maltratar tu cabello. Resultado de salón, en casa.</p>
+      <div class="hero__cta"><a href="#shop" class="btn btn--teal">Descubre BeautyHits →</a><a href="#quiz" class="btn btn--ghost">¿Cuál es para mí?</a></div>
+      <div class="hero__rating"><b>★★★★★</b> 4,9/5 · más de 1.200 reseñas reales</div>
+    </div>
+    <div class="hero__media">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Producto BeautyHits"/>
+      <div class="hero__chip hero__chip--1"><span class="em">👌</span>Lista en <small>menos de 10 min</small></div>
+      <div class="hero__chip hero__chip--2"><span class="em">💧</span>Sin frizz <small>brillo que dura</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust__in">
+    <div class="trust__i"><span class="em">⚡</span><div>Envíos rápidos<small>24–48 hrs hábiles</small></div></div>
+    <div class="trust__i"><span class="em">🔒</span><div>Pagos seguros<small>Webpay · Mercado Pago</small></div></div>
+    <div class="trust__i"><span class="em">💕</span><div>Clientas reales<small>+1.200 reseñas</small></div></div>
+    <div class="trust__i"><span class="em">🛡️</span><div>1 año de garantía<small>en todos los equipos</small></div></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="shop">
+  <div class="sec__head"><span class="eye">Los favoritos</span><h2 class="disp">Un solo equipo, todos tus peinados</h2><p>Diseñados para que tu rutina sea más fácil — y tu cabello, más sano.</p></div>
+
+  <div class="show">
+    <div class="show__img" style="background-image:url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80')"></div>
+    <div class="show__body">
+      <span class="tagk">Best seller 🔥</span>
+      <h3 class="disp">Airwrap™ Coanda 2x</h3>
+      <p>Seca, ondula y alisa con aire, no con calor extremo. El multi-estilo que se adapta a cada tipo de cabello.</p>
+      <ul class="show__feat"><li>6 accesorios intercambiables</li><li>Control inteligente de temperatura</li><li>Brillo sin maltratar</li></ul>
+      <div class="show__price"><b>$599.990</b><s>$679.990</s><span class="save">-12%</span></div>
+      <a href="#" class="btn btn--ink">Agregar al carrito 🛍️</a>
+    </div>
+  </div>
+
+  <div class="show rev">
+    <div class="show__img" style="background-image:url('https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=900&q=80')"></div>
+    <div class="show__body">
+      <span class="tagk">El clásico ✨</span>
+      <h3 class="disp">Supersonic™ Secador</h3>
+      <p>Secado ultra rápido y silencioso con motor digital. Cuida el brillo natural mientras te peinas.</p>
+      <ul class="show__feat"><li>Motor digital Hyperdymium™</li><li>3 modos de temperatura</li><li>Liviano y silencioso</li></ul>
+      <div class="show__price"><b>$449.990</b></div>
+      <a href="#" class="btn btn--ink">Agregar al carrito 🛍️</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="quiz">
+  <div class="why">
+    <div class="sec__head" style="margin-bottom:0;color:#fff"><span class="eye">¿Por qué BeautyHits?</span><h2 class="disp" style="color:#fff">Tu pelo, tus reglas</h2></div>
+    <div class="why__grid">
+      <div class="why__c"><span class="em">🌿</span><h4 class="disp">Sin maltrato</h4><p>Tecnología que estiliza con aire y control de calor.</p></div>
+      <div class="why__c"><span class="em">⏱️</span><h4 class="disp">Más rápido</h4><p>Lista para tu día en menos de 10 minutos.</p></div>
+      <div class="why__c"><span class="em">💳</span><h4 class="disp">12 cuotas</h4><p>Financiamiento sin interés en todos los equipos.</p></div>
+      <div class="why__c"><span class="em">🛡️</span><h4 class="disp">Garantía real</h4><p>1 año de cobertura y soporte por WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap">
+  <div class="sec__head"><span class="eye">✨ #RealHairDay</span><h2 class="disp">Las BeautyGirls hablan</h2><p>Resultados reales de clientas reales.</p></div>
+  <div class="ugc__grid">
+    <div class="ugc__c"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80" alt=""/><span>@valentina 💕</span></div>
+    <div class="ugc__c"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=500&q=80" alt=""/><span>@cami.s 😍</span></div>
+    <div class="ugc__c"><img src="https://images.unsplash.com/photo-1512288094938-363287817259?auto=format&fit=crop&w=500&q=80" alt=""/><span>@antomr ✨</span></div>
+    <div class="ugc__c"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=500&q=80" alt=""/><span>@josefa.b 👌</span></div>
+  </div>
+</section>
+
+<section class="sec wrap">
+  <div class="nl">
+    <h2 class="disp">Tu pelo, tus reglas 💌</h2>
+    <p>Suscríbete y recibe 10% en tu primera compra + lanzamientos antes que nadie.</p>
+    <form id="nlForm"><input type="email" placeholder="tu@correo.cl" required/><button class="btn btn--ink" type="submit">Quiero mi 10%</button></form>
+    <p class="nl__msg" id="nlMsg"></p>
+  </div>
+</section>
+
+<footer class="ft wrap">
+  <div class="ft__grid">
+    <div><a href="#" class="logo">Beauty<b>Hits</b></a><p>Herramientas inteligentes para peinarte sin maltratar tu cabello. Despacho a todo Chile.</p></div>
+    <div><h4>Tienda</h4><a href="#">Secadores</a><a href="#">Moldeadores</a><a href="#">Ofertas</a></div>
+    <div><h4>Ayuda</h4><a href="#">¿Cuál es para mí?</a><a href="#">Envíos</a><a href="#">Garantía</a></div>
+    <div><h4>Hablemos</h4><a href="#">hola@beautyhits.cl</a><a href="#">WhatsApp +56 9 1234 5678</a><a href="#">Instagram 💕</a></div>
+  </div>
+  <div class="ft__bot"><span>© 2026 BeautyHits SpA</span><span class="proto">Prototipo — sin transacciones reales</span></div>
+</footer>
+
+<script>
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('nlMsg').textContent='¡Listo! Revisa tu correo para el código HITS10 💕';e.target.reset();});
+</script>
+</body>
+</html>

@@ -39,11 +39,15 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 | **A — Salon** | `variants/a.html` | Minimalismo de lujo estilo LPB (negro/crema + rose gold). Usa `styles.css` + `app.js`. |
 | **B — Editorial** | `variants/b.html` | Revista de moda: tipografía Bodoni, papel crema, acento rojo lápiz, "El Índice" numerado en vez de grilla de cards. |
 | **C — Noir Chrome** | `variants/c.html` | Beauty-tech oscuro: negro, degradados cromo/oro, serif Cormorant, hero con halo, banda de specs. |
+| **D — Drop** | `variants/d.html` | DTC inspirado en **dropbe.pe**: blanco, teal + dorado, pills redondeadas, trust badges, copy cercano con emojis, showcases alternados, "Tu pelo, tus reglas". Fuentes Fredoka + Hanken Grotesk. |
+| **E — Quiz** | `variants/e.html` | El hero **es un test interactivo** "¿Cuál es para ti?" que recomienda un producto. Pastel, blobs, cards color-block. Estructura única. Fuentes Bricolage Grotesque + Figtree. |
+| **F — Pop** | `variants/f.html` | Maximalismo neo-brutalista: bloques teal/crema, sombras duras, stickers rotados, marquee, antes/después, #RealHairDay. Fuentes Darker Grotesque + Hanken Grotesk. |
+
+Variantes A–C nacen de **lpb.cl** (lujo minimalista). Variantes D–F nacen de **dropbe.pe** (DTC joven, trust badges, quiz, emojis).
 
 Links directos:
-- https://mauricioliu.github.io/beautyhits/?variant=a
-- https://mauricioliu.github.io/beautyhits/?variant=b
-- https://mauricioliu.github.io/beautyhits/?variant=c
+- https://mauricioliu.github.io/beautyhits/?variant=a · b · c (estilo LPB)
+- https://mauricioliu.github.io/beautyhits/?variant=d · e · f (estilo DropBe)
 
 ## Veredicto del cliente
 > _Pendiente_ — completar tras revisión: ¿qué variante gana? ¿qué secciones mezclar?
