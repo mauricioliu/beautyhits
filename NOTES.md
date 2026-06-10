@@ -45,6 +45,7 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 
 | **G — Blush** | `variants/g.html` | Rosa pastel muy redondeado (recreación de una imagen de referencia del cliente): hero panel rosa + foto, trust badges, "Nuestras marcas", Best Sellers en cards blush, banda de tecnología, 3 cards de categoría (peach/lilac/mint). Plus Jakarta Sans. |
 | **H — Glam Pop** | `variants/h.html` | Recreación de la 2ª imagen de referencia (WhatsApp 2026-06-10): top bar y footer **negros**, hero **magenta** con titular en bloques negros estilo sticker (Anton), títulos brush (Permanent Marker), Best Sellers sobre fondos de color con nomenclatura Dyson real, banda negra "Tecnología que cambia tu rutina", cards de categoría con overlay de color, newsletter negra. |
+| **I — Blush Glam** | `variants/i.html` | Recreación de la 3ª imagen de referencia: misma estructura de H pero en **rosa suave** — itálicas serif elegantes (Fraunces), flores acuarela en CSS, banda de tecnología rosa, footer claro. **Mobile-first**: menú drawer funcional, Best Sellers como carrusel scroll-snap, trust 2×2, CTAs a ancho completo. |
 
 Variantes A–C nacen de **lpb.cl** (lujo minimalista). D–F nacen de **dropbe.pe** (DTC joven). G recrea una **imagen de referencia** (estilo rosa blush).
 
