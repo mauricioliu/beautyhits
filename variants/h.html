@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE — BeautyHits · Variant H "Glam Pop" (throwaway). Recreates the black+magenta reference image (WhatsApp, 2026-06-10). -->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beauty Hits⁺ — Es tu momento de brillar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#0e0d0e; --paper:#ffffff; --gray:#f5f3f4; --soft:#6e676b;
+  --magenta:#d6336c; --magenta-d:#b02458; --pink:#f3a7c3; --rose:#e7b9c9;
+  --amber:#e8a23c; --plum:#5d3a52; --terra:#b65b48; --lilac:#e9d6ec;
+  --line:#e8e2e5; --maxw:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+.anton{font-family:'Anton',sans-serif;letter-spacing:.01em}
+.brush{font-family:'Permanent Marker',cursive}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:14px 28px;border-radius:50px;cursor:pointer;transition:.2s;border:2px solid transparent}
+.btn--outline-w{background:transparent;color:#fff;border-color:#fff}
+.btn--outline-w:hover{background:#fff;color:var(--ink)}
+.btn--white{background:#fff;color:var(--ink)}.btn--white:hover{background:var(--magenta);color:#fff}
+.btn--ink{background:var(--ink);color:#fff;border-color:var(--ink)}.btn--ink:hover{background:var(--magenta);border-color:var(--magenta)}
+
+/* top bar */
+.top{background:var(--ink);color:#fff;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.top__in{display:flex;justify-content:center;gap:38px;padding:9px 24px;flex-wrap:wrap}
+.top__in span b{color:var(--pink)}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 24px;max-width:var(--maxw);margin:0 auto}
+.logo{font-family:'Anton';font-size:1.5rem;letter-spacing:.01em}
+.logo sup{color:var(--magenta);font-size:1rem}
+.nav{display:flex;gap:24px;font-weight:600;font-size:.88rem}
+.nav a{padding-bottom:3px;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.on{color:var(--magenta);border-color:var(--magenta)}
+.hdr__ic{display:flex;gap:16px;font-size:1.05rem}
+
+/* hero */
+.hero{background:linear-gradient(115deg,#e54d83 0%,var(--magenta) 45%,#8e1c4a 100%);color:#fff;position:relative;overflow:hidden}
+.hero__in{display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:20px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.hero__l{padding:54px 0}
+.hero h1{font-family:'Anton';font-size:clamp(2.6rem,6.6vw,4.8rem);line-height:1.04;text-transform:uppercase}
+.hero h1 span{background:var(--ink);padding:.04em .18em;display:inline-block;margin:.045em 0}
+.hero__p{margin:22px 0 26px;max-width:380px;font-size:1.02rem;line-height:1.55;color:#ffd9e6;font-weight:500}
+.hero__img{align-self:end;position:relative}
+.hero__img img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:top;
+  -webkit-mask-image:linear-gradient(180deg,#000 86%,transparent);mask-image:linear-gradient(180deg,#000 86%,transparent)}
+.hero__spark{position:absolute;font-size:1.6rem}
+.hero__spark.s1{top:8%;left:-4px}.hero__spark.s2{bottom:18%;right:6%}
+
+/* trust */
+.trust{border-bottom:1px solid var(--line)}
+.trust__in{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--maxw);margin:0 auto}
+.t__i{display:flex;gap:13px;align-items:center;justify-content:center;padding:20px 16px;border-right:1px solid var(--line)}
+.t__i:last-child{border-right:none}
+.t__i .em{font-size:1.4rem}
+.t__i b{display:block;font-size:.88rem}.t__i small{color:var(--soft);font-size:.76rem}
+
+/* brands */
+.brands{text-align:center;padding:34px 0 10px}
+.brands h4{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:22px;font-weight:700}
+.brands__row{display:flex;justify-content:center;align-items:center;gap:18px 40px;flex-wrap:wrap}
+.brands__row span{font-weight:800;font-size:1.05rem;color:#262226;letter-spacing:.02em}
+.brands__row .cw{letter-spacing:.18em;font-weight:900}
+.brands__row .cc{font-family:'Permanent Marker';font-weight:400}
+.brands__row .dy{font-weight:700;letter-spacing:-.02em}
+.brands__row .md{font-weight:600}.brands__row .md sup{color:var(--magenta)}
+.brands__row .gh{font-weight:400;letter-spacing:.05em}
+
+/* best sellers */
+.sec{padding:54px 0}
+.sec__head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.sec__head h2{font-family:'Permanent Marker';font-size:clamp(1.8rem,4vw,2.6rem)}
+.sec__head h2 i{font-style:normal;color:var(--magenta)}
+.sec__head .btn{padding:11px 22px;font-size:.76rem}
+.pg{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.p{position:relative;transition:.25s}
+.p:hover{transform:translateY(-5px)}
+.p__media{position:relative;aspect-ratio:3/3.6;border-radius:14px;overflow:hidden;margin-bottom:12px}
+.p__media img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.92}
+.p__wish{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#fff;border:none;cursor:pointer;font-size:.85rem;color:var(--magenta);z-index:2}
+.p__n{font-weight:700;font-size:.85rem;line-height:1.3}
+.p__v{color:var(--soft);font-size:.76rem;margin:2px 0 7px}
+.p__price b{font-weight:800;font-size:.95rem}
+.p__price s{color:var(--soft);font-size:.76rem;margin-left:7px}
+
+/* tech band */
+.tech{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.tech__in{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;max-width:var(--maxw);margin:0 auto;padding:64px 24px}
+.tech h2{font-family:'Permanent Marker';font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.06}
+.tech h2 i{font-style:normal;color:var(--pink)}
+.tech__sub{color:#cfc6cb;font-weight:600;margin:6px 0 20px}
+.tech__feat{list-style:none;margin-bottom:28px}
+.tech__feat li{display:flex;gap:12px;align-items:center;padding:8px 0;font-weight:600;color:#eee4e9}
+.tech__feat .em{width:34px;height:34px;border-radius:50%;background:rgba(243,167,195,.15);display:grid;place-items:center;flex:none}
+.tech__img{position:relative;border-radius:18px;overflow:hidden}
+.tech__img img{width:100%;aspect-ratio:4/3.1;object-fit:cover}
+.tech__img::after{content:"";position:absolute;inset:0;background:linear-gradient(25deg,rgba(214,51,108,.35),transparent 55%)}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat{border-radius:18px;overflow:hidden;position:relative;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:.25s}
+.cat:hover{transform:translateY(-5px)}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cat::after{content:"";position:absolute;inset:0;z-index:1}
+.cat--pink::after{background:linear-gradient(185deg,rgba(214,51,108,.18) 0%,rgba(214,51,108,.78) 88%)}
+.cat--amber::after{background:linear-gradient(185deg,rgba(232,162,60,.14) 0%,rgba(176,108,20,.8) 88%)}
+.cat--lilac::after{background:linear-gradient(185deg,rgba(190,120,180,.16) 0%,rgba(112,55,110,.8) 88%)}
+.cat__b{position:relative;z-index:2;color:#fff}
+.cat__b h3{font-family:'Anton';font-size:1.7rem;text-transform:uppercase;letter-spacing:.02em}
+.cat__b p{font-size:.88rem;opacity:.92;margin:6px 0 14px;max-width:230px;font-weight:500}
+.cat__b .btn{padding:10px 20px;font-size:.72rem}
+
+/* newsletter */
+.nl{background:var(--ink);color:#fff;border-top:1px solid #262226}
+.nl__in{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;max-width:var(--maxw);margin:0 auto;padding:46px 24px}
+.nl h2{font-family:'Anton';font-size:clamp(1.5rem,3.2vw,2.2rem);text-transform:uppercase;line-height:1.15}
+.nl h2 .em{margin-right:10px}
+.nl h2 i{font-style:normal;color:var(--pink)}
+.nl form{display:flex;gap:10px;background:#fff;border-radius:50px;padding:6px}
+.nl input{flex:1;border:none;background:transparent;padding:0 18px;font-family:'Archivo';outline:none;color:var(--ink);font-weight:500}
+.nl .btn{padding:12px 26px}
+.nl__perks{display:flex;gap:26px;margin-top:14px;flex-wrap:wrap;font-size:.78rem;font-weight:600;color:#cfc6cb}
+.nl__msg{margin-top:10px;color:var(--pink);font-weight:700;min-height:20px;font-size:.88rem}
+
+/* footer */
+.ft{background:var(--ink);color:#fff;border-top:1px solid #262226;padding:50px 0 24px}
+.ft__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.4fr;gap:30px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.ft .logo{display:inline-block;margin-bottom:12px;color:#fff}
+.ft p,.ft a{display:block;color:#a89fa4;font-size:.86rem;margin-bottom:9px}
+.ft a:hover{color:var(--pink)}
+.ft h4{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;color:#fff;font-weight:700}
+.ft__pay{display:flex;gap:8px;flex-wrap:wrap}
+.ft__pay span{background:#fff;color:var(--ink);border-radius:6px;padding:5px 10px;font-size:.64rem;font-weight:800;letter-spacing:.04em}
+.ft__soc{display:flex;gap:12px;margin-top:14px;font-size:1.1rem}
+.ft__bot{display:flex;justify-content:space-between;border-top:1px solid #262226;margin-top:38px;padding-top:18px;max-width:var(--maxw);margin-left:auto;margin-right:auto;
+  padding-left:24px;padding-right:24px;color:#a89fa4;font-size:.78rem;flex-wrap:wrap;gap:8px}
+.ft__bot .proto{color:var(--pink)}
+
+@media(max-width:1020px){.pg{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:880px){
+  .hero__in,.tech__in,.nl__in{grid-template-columns:1fr}
+  .hero__img{order:-1}.hero__l{padding:30px 0 46px}
+  .cats{grid-template-columns:1fr}
+  .trust__in{grid-template-columns:1fr 1fr}.t__i:nth-child(2){border-right:none}
+  .nav{display:none}
+  .ft__grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){.pg{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="top__in"><span>Hasta <b>12 cuotas sin interés</b></span><span>Envíos a todo Chile</span><span>Compra segura</span></div></div>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a href="#" class="logo">Beauty Hits<sup>+</sup></a>
+    <nav class="nav"><a href="#" class="on">Inicio</a><a href="#brands">Marcas</a><a href="#shop">Hair Tools</a><a href="#cats">Skincare</a><a href="#shop">Best Sellers</a><a href="#">Ofertas</a></nav>
+    <div class="hdr__ic"><span>🔍</span><span>👤</span><span>🛍️</span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__in">
+    <div class="hero__l">
+      <h1><span>Es tu</span><br/><span>momento</span><br/><span>de brillar</span></h1>
+      <p class="hero__p">Herramientas y productos profesionales para cuidar, alisar, ondular y elevar tu rutina de belleza.</p>
+      <a href="#shop" class="btn btn--outline-w">Descubrir Beauty Hits</a>
+    </div>
+    <div class="hero__img">
+      <span class="hero__spark s1">✦</span><span class="hero__spark s2">✧</span>
+      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=80" alt="Modelos con herramientas Beauty Hits"/>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust__in">
+    <div class="t__i"><span class="em">🚚</span><div><b>Envíos a todo Chile</b><small>Rápido y seguro</small></div></div>
+    <div class="t__i"><span class="em">💳</span><div><b>Pagos seguros</b><small>Hasta 12 cuotas sin interés</small></div></div>
+    <div class="t__i"><span class="em">👥</span><div><b>Clientes reales</b><small>+100.000 clientas felices</small></div></div>
+    <div class="t__i"><span class="em">🛡️</span><div><b>Garantía oficial</b><small>Productos 100% originales</small></div></div>
+  </div>
+</section>
+
+<section class="brands wrap" id="brands">
+  <h4>Nuestras marcas</h4>
+  <div class="brands__row">
+    <span class="cw">COLOR WOW</span><span class="cc">CRAZY COLOR</span><span>osmo</span>
+    <span class="dy">dyson hair</span><span class="dy">dyson home</span><span class="md">medicube<sup>+</sup></span><span class="gh">ghd</span>
+  </div>
+</section>
+
+<section class="sec wrap" id="shop">
+  <div class="sec__head"><h2>Best Sellers <i>✦</i></h2><a href="#" class="btn btn--ink">Ver todos los productos →</a></div>
+  <div class="pg" id="grid"></div>
+</section>
+
+<section class="tech">
+  <div class="tech__in">
+    <div>
+      <h2>Tecnología que cambia <i>tu rutina</i></h2>
+      <p class="tech__sub">Peinados rápidos, suaves y sin calor extremo.</p>
+      <ul class="tech__feat">
+        <li><span class="em">💨</span>Flujo de aire inteligente</li>
+        <li><span class="em">✨</span>Protege el brillo natural</li>
+        <li><span class="em">💁‍♀️</span>Resultados profesionales</li>
+      </ul>
+      <a href="#shop" class="btn btn--white">Descubrir Hair Tools</a>
+    </div>
+    <div class="tech__img"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1000&q=80" alt="Herramientas profesionales"/></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="cats">
+  <div class="cats">
+    <article class="cat cat--pink">
+      <img src="https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="cat__b"><h3>Hair Styling</h3><p>Herramientas pro para crear tu estilo ideal.</p><a href="#" class="btn btn--white">Ver más</a></div>
+    </article>
+    <article class="cat cat--amber">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="cat__b"><h3>Haircare</h3><p>Cuidado profesional para cada tipo de pelo.</p><a href="#" class="btn btn--white">Ver más</a></div>
+    </article>
+    <article class="cat cat--lilac">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="cat__b"><h3>Skincare</h3><p>Rutinas efectivas para tu mejor piel.</p><a href="#" class="btn btn--white">Ver más</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="nl">
+  <div class="nl__in">
+    <h2><span class="em">✦</span>Sé la primera en descubrir <i>novedades y ofertas exclusivas</i></h2>
+    <div>
+      <form id="nlForm"><input type="email" placeholder="Ingresa tu email" required/><button class="btn btn--ink" type="submit">Suscribirme</button></form>
+      <div class="nl__perks"><span>🎁 Ofertas exclusivas</span><span>🚀 Nuevos lanzamientos</span><span>💄 Tips de belleza</span></div>
+      <p class="nl__msg" id="nlMsg"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ft__grid">
+    <div>
+      <a href="#" class="logo">Beauty Hits<sup>+</sup></a>
+      <p>Tu tienda de belleza online en Chile. Las mejores marcas, herramientas y productos para tu rutina, todos los días.</p>
+      <div class="ft__soc"><span>📷</span><span>🎵</span><span>▶️</span><span>📘</span></div>
+    </div>
+    <div><h4>Comprar</h4><a href="#">Hair Tools</a><a href="#">Skincare</a><a href="#">Haircare</a><a href="#">Best Sellers</a><a href="#">Ofertas</a><a href="#">Marcas</a></div>
+    <div><h4>Ayuda</h4><a href="#">Envíos y entregas</a><a href="#">Cambios y devoluciones</a><a href="#">Preguntas frecuentes</a><a href="#">Medios de pago</a><a href="#">Contacto</a></div>
+    <div><h4>Nosotros</h4><a href="#">Quiénes somos</a><a href="#">Marcas</a><a href="#">Blog</a><a href="#">Términos y condiciones</a><a href="#">Política de privacidad</a></div>
+    <div><h4>Medios de pago</h4><div class="ft__pay"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>REDCOMPRA</span><span>MERCADO PAGO</span><span>WEBPAY</span></div></div>
+  </div>
+  <div class="ft__bot"><span>© 2026 Beauty Hits. Todos los derechos reservados.</span><span class="proto">Prototipo — sin transacciones reales</span></div>
+</footer>
+
+<script>
+const CLP=n=>'$'+n.toLocaleString('es-CL');
+const P=[
+ {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:1049990,w:1149990,bg:'#f3cdd8',img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Airstrait™ – Secado + Alisado',v:'Ceramic Pink / Rose Gold',p:679990,w:null,bg:'#c97a62',img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Airwrap i.d.™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:859990,w:1099990,bg:'#e8d3bb',img:'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Jasper Plum',p:999990,w:1149990,bg:'#5d3a52',img:'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Airstrait™ – Secado + Alisado',v:'Amber Silk',p:719990,w:null,bg:'#d9c2a5',img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Supersonic™ Nural – Secador',v:'Pink / Rose Gold',p:699990,w:null,bg:'#e7b9c9',img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=500&q=80'},
+];
+document.getElementById('grid').innerHTML=P.map(x=>`
+ <article class="p">
+   <div class="p__media" style="background:${x.bg}"><button class="p__wish">♡</button><img src="${x.img}" alt="${x.n}" loading="lazy"/></div>
+   <h3 class="p__n">${x.n}</h3><p class="p__v">(${x.v})</p>
+   <p class="p__price"><b>${CLP(x.p)}</b>${x.w?`<s>${CLP(x.w)}</s>`:''}</p>
+ </article>`).join('');
+document.getElementById('grid').addEventListener('click',e=>{if(e.target.classList.contains('p__wish'))e.target.textContent=e.target.textContent==='♡'?'♥':'♡';});
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('nlMsg').textContent='¡Lista! Revisa tu correo para tus ofertas exclusivas ✦';e.target.reset();});
+</script>
+</body>
+</html>

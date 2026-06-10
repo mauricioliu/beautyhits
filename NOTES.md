@@ -44,6 +44,7 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 | **F — Pop** | `variants/f.html` | Maximalismo neo-brutalista: bloques teal/crema, sombras duras, stickers rotados, marquee, antes/después, #RealHairDay. Fuentes Darker Grotesque + Hanken Grotesk. |
 
 | **G — Blush** | `variants/g.html` | Rosa pastel muy redondeado (recreación de una imagen de referencia del cliente): hero panel rosa + foto, trust badges, "Nuestras marcas", Best Sellers en cards blush, banda de tecnología, 3 cards de categoría (peach/lilac/mint). Plus Jakarta Sans. |
+| **H — Glam Pop** | `variants/h.html` | Recreación de la 2ª imagen de referencia (WhatsApp 2026-06-10): top bar y footer **negros**, hero **magenta** con titular en bloques negros estilo sticker (Anton), títulos brush (Permanent Marker), Best Sellers sobre fondos de color con nomenclatura Dyson real, banda negra "Tecnología que cambia tu rutina", cards de categoría con overlay de color, newsletter negra. |
 
 Variantes A–C nacen de **lpb.cl** (lujo minimalista). D–F nacen de **dropbe.pe** (DTC joven). G recrea una **imagen de referencia** (estilo rosa blush).
 
