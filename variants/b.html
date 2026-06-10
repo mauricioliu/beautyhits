@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE — BeautyHits · Variant B "Editorial" (throwaway). Fashion-magazine direction. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeautyHits — Edición 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#efe9dd; --paper-2:#e6dfd0; --ink:#16130f; --ink-2:#5d564a;
+  --red:#df2c12; --rule:#bdb3a0; --maxw:1340px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(0,0,0,.025) 1px,transparent 1px);background-size:4px 4px;overflow-x:hidden}
+.serif{font-family:'Bodoni Moda',serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.kicker{font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;font-weight:600}
+
+/* Masthead */
+.masthead{border-bottom:2px solid var(--ink);padding-top:18px}
+.masthead__top{display:flex;justify-content:space-between;align-items:center;font-size:.64rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-2);padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.masthead__top a:hover{color:var(--red)}
+.masthead__title{display:flex;align-items:flex-end;justify-content:space-between;padding:10px 0 16px;gap:20px}
+.masthead__title h1{font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(2.4rem,9vw,7.4rem);line-height:.86;
+  letter-spacing:-.02em;text-transform:uppercase}
+.masthead__meta{text-align:right;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);
+  padding-bottom:10px;line-height:1.8;white-space:nowrap}
+.masthead__nav{display:flex;gap:30px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:11px 0;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.masthead__nav a{position:relative}
+.masthead__nav a:hover{color:var(--red)}
+.masthead__nav .sep{margin-left:auto;color:var(--red)}
+
+/* Hero — asymmetric editorial */
+.hero{position:relative;padding:46px 0 30px}
+.hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:end}
+.hero__ghostnum{position:absolute;top:-20px;right:-10px;font-family:'Bodoni Moda',serif;font-weight:900;
+  font-size:clamp(10rem,34vw,30rem);line-height:.7;color:transparent;-webkit-text-stroke:1.5px var(--rule);
+  z-index:0;pointer-events:none;user-select:none}
+.hero__left{position:relative;z-index:2}
+.hero__eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.hero__eyebrow::after{content:"";height:1px;width:90px;background:var(--ink)}
+.hero h2{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.96;
+  letter-spacing:-.015em;margin-bottom:6px}
+.hero h2 em{font-style:italic;color:var(--red)}
+.hero__lead{max-width:430px;margin:26px 0 30px;color:var(--ink-2);font-size:1.02rem;line-height:1.6;
+  border-left:2px solid var(--red);padding-left:18px}
+.hero__cta{display:inline-flex;align-items:center;gap:14px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;
+  font-weight:600;border-bottom:2px solid var(--ink);padding-bottom:6px;transition:.25s}
+.hero__cta:hover{color:var(--red);border-color:var(--red);gap:22px}
+.hero__right{position:relative;z-index:2}
+.hero__img{aspect-ratio:3/3.7;object-fit:cover;width:100%;filter:contrast(1.04) saturate(.92);
+  box-shadow:18px 18px 0 var(--paper-2),18px 18px 0 1px var(--ink)}
+.hero__caption{margin-top:12px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);
+  display:flex;justify-content:space-between}
+
+/* Marquee strip */
+.strip{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:30px;overflow:hidden;
+  background:var(--ink);color:var(--paper)}
+.strip__track{display:flex;gap:48px;width:max-content;animation:roll 28s linear infinite;padding:11px 0}
+.strip__track span{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.05rem;white-space:nowrap;letter-spacing:.02em}
+.strip__track b{color:var(--red);font-style:normal;font-weight:900}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* The Index — numbered product list */
+.index{padding:64px 0 30px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);
+  padding-bottom:12px;margin-bottom:6px}
+.section-head h3{font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(1.8rem,4vw,3rem);text-transform:uppercase;letter-spacing:-.01em}
+.section-head .kicker{color:var(--ink-2)}
+.entry{display:grid;grid-template-columns:88px 1fr auto;gap:24px;align-items:center;padding:22px 6px;
+  border-bottom:1px solid var(--rule);position:relative;transition:.3s;cursor:pointer}
+.entry:hover{background:var(--ink);color:var(--paper);padding-left:24px;padding-right:24px}
+.entry:hover .entry__price{color:var(--paper)}
+.entry:hover .entry__brand{color:#c9bfa9}
+.entry__no{font-family:'Bodoni Moda',serif;font-weight:400;font-size:2.4rem;line-height:1;color:var(--red)}
+.entry__brand{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);margin-bottom:5px}
+.entry__name{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.05}
+.entry__name em{font-style:italic}
+.entry__price{text-align:right;white-space:nowrap}
+.entry__price b{font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.5rem;display:block}
+.entry__price s{font-size:.8rem;color:var(--ink-2)}
+.entry__price small{display:block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
+/* floating preview image on hover */
+.entry__peek{position:absolute;right:230px;top:50%;width:150px;aspect-ratio:3/4;object-fit:cover;
+  transform:translateY(-50%) rotate(-4deg) scale(.7);opacity:0;pointer-events:none;z-index:5;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);transition:.35s cubic-bezier(.2,.9,.3,1)}
+.entry:hover .entry__peek{opacity:1;transform:translateY(-50%) rotate(-4deg) scale(1)}
+
+/* Feature spread */
+.spread{margin:70px 0;display:grid;grid-template-columns:1fr 1fr;background:var(--ink);color:var(--paper)}
+.spread__img{background-size:cover;background-position:center;min-height:520px;filter:grayscale(.15)}
+.spread__body{padding:clamp(36px,5vw,76px);display:flex;flex-direction:column;justify-content:center}
+.spread__body .kicker{color:var(--red)}
+.spread__quote{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.12;margin:22px 0;letter-spacing:-.01em}
+.spread__quote em{font-style:italic;color:#e9ccc4}
+.spread__by{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:#b7ad97}
+.spread__body .hero__cta{color:var(--paper);border-color:var(--paper);margin-top:30px;align-self:flex-start}
+.spread__body .hero__cta:hover{color:var(--red);border-color:var(--red)}
+
+/* Editorial gallery (3 picks) */
+.picks{padding:20px 0 40px}
+.picks__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}
+.pick{position:relative}
+.pick__tag{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;padding:5px 10px}
+.pick img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.pick__cap{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:10px;margin-top:12px}
+.pick__cap h4{font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.15rem}
+.pick__cap span{font-weight:600}
+
+/* Subscribe */
+.subscribe{background:var(--red);color:#fff;padding:72px 0;margin-top:30px}
+.subscribe__in{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.subscribe h3{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2rem,4.4vw,3.6rem);line-height:1;letter-spacing:-.01em}
+.subscribe h3 em{font-style:italic}
+.subscribe p{margin-top:14px;max-width:380px;opacity:.92}
+.subscribe form{display:flex;border-bottom:2px solid #fff;padding-bottom:8px}
+.subscribe input{flex:1;background:transparent;border:none;color:#fff;font-family:'Bodoni Moda',serif;font-size:1.3rem;outline:none}
+.subscribe input::placeholder{color:rgba(255,255,255,.6)}
+.subscribe button{background:none;border:none;color:#fff;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;cursor:pointer;font-family:'Archivo'}
+.subscribe__msg{margin-top:14px;font-family:'Bodoni Moda';font-style:italic;min-height:22px}
+
+/* Colophon */
+.colophon{padding:54px 0 30px}
+.colophon__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;border-top:2px solid var(--ink);padding-top:30px}
+.colophon h5{font-family:'Bodoni Moda',serif;font-weight:900;font-size:2.2rem;text-transform:uppercase;letter-spacing:-.01em}
+.colophon p,.colophon a{display:block;color:var(--ink-2);font-size:.82rem;margin-bottom:8px}
+.colophon a:hover{color:var(--red)}
+.colophon h6{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px;color:var(--ink)}
+.colophon__foot{display:flex;justify-content:space-between;border-top:1px solid var(--rule);margin-top:30px;padding-top:16px;
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);flex-wrap:wrap;gap:8px}
+.colophon__foot .proto{color:var(--red)}
+
+@media(max-width:900px){
+  .hero__grid,.spread,.subscribe__in,.colophon__grid{grid-template-columns:1fr}
+  .picks__grid{grid-template-columns:1fr}
+  .masthead__title{flex-direction:column;align-items:flex-start}
+  .masthead__meta{text-align:left}
+  .entry__peek{display:none}
+  .entry{grid-template-columns:54px 1fr;gap:14px}
+  .entry__price{grid-column:2;text-align:left;margin-top:6px}
+  .masthead__nav{gap:18px;flex-wrap:wrap}
+  .spread__img{min-height:300px}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead__top">
+      <span>Edición Nº 01 — Otoño / Invierno 2026</span>
+      <span class="hide-s">Santiago · Chile</span>
+      <a href="#">Iniciar sesión / Bolsa (0)</a>
+    </div>
+    <div class="masthead__title">
+      <h1>BeautyHits</h1>
+      <div class="masthead__meta">El dossier de la<br/>belleza profesional<br/>$5.990 · O GRATIS ONLINE</div>
+    </div>
+    <nav class="masthead__nav">
+      <a href="#">Portada</a><a href="#">El Índice</a><a href="#">Dyson</a><a href="#">Color</a><a href="#">Skin</a>
+      <a href="#" class="sep">Rebajas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__ghostnum serif">01</div>
+    <div class="hero__left">
+      <div class="hero__eyebrow"><span class="kicker">Reportaje de portada</span></div>
+      <h2 class="serif">Potencia que<br/>transforma.<br/><em>Estilo que se multiplica.</em></h2>
+      <p class="hero__lead">El Dyson Airwrap™ Coanda 2x abre la edición. Seca, ondula y alisa sin calor extremo — la tecnología que redefinió la rutina, ahora en BeautyHits con 12 cuotas sin interés.</p>
+      <a href="#index" class="hero__cta">Leer la edición completa →</a>
+    </div>
+    <div class="hero__right">
+      <img class="hero__img" src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80" alt="Editorial de portada"/>
+      <div class="hero__caption"><span>Fotografía — Estudio BH</span><span>Pág. 01</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip__track">
+    <span>Dyson <b>✦</b> GHD <b>✦</b> Color Wow <b>✦</b> Osmo <b>✦</b> Medicube <b>✦</b> Crazy Color <b>✦</b></span>
+    <span>Dyson <b>✦</b> GHD <b>✦</b> Color Wow <b>✦</b> Osmo <b>✦</b> Medicube <b>✦</b> Crazy Color <b>✦</b></span>
+  </div>
+</div>
+
+<section class="index wrap" id="index">
+  <div class="section-head">
+    <h3 class="serif">El Índice</h3>
+    <span class="kicker">Las piezas de la temporada</span>
+  </div>
+  <div id="entries"></div>
+</section>
+
+<section class="spread">
+  <div class="spread__img" style="background-image:url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1000&q=80')"></div>
+  <div class="spread__body">
+    <span class="kicker">Tecnología · Ensayo</span>
+    <p class="spread__quote serif">“Cada accesorio, <em>un estilo diferente.</em> Un solo equipo, infinitas versiones de ti.”</p>
+    <span class="spread__by">— Sobre el Airwrap Coanda 2x™</span>
+    <a href="#" class="hero__cta">Ver el ensayo →</a>
+  </div>
+</section>
+
+<section class="picks wrap">
+  <div class="section-head">
+    <h3 class="serif">Selección del editor</h3>
+    <span class="kicker">Tres imprescindibles</span>
+  </div>
+  <div class="picks__grid">
+    <article class="pick"><span class="pick__tag">Best seller</span><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80" alt=""/><div class="pick__cap"><h4 class="serif">Dream Coat</h4><span>$34.990</span></div></article>
+    <article class="pick"><span class="pick__tag">Nuevo</span><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt=""/><div class="pick__cap"><h4 class="serif">Age-R Booster</h4><span>$189.990</span></div></article>
+    <article class="pick"><span class="pick__tag">Edición</span><img src="https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=600&q=80" alt=""/><div class="pick__cap"><h4 class="serif">GHD Platinum+</h4><span>$269.990</span></div></article>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="wrap subscribe__in">
+    <div>
+      <h3 class="serif">Suscríbete a la <em>edición</em>.</h3>
+      <p>Recibe cada lanzamiento antes que nadie y un 10% en tu primera compra con el código HITS10.</p>
+    </div>
+    <div>
+      <form id="subForm"><input type="email" placeholder="tu@correo.cl" required/><button>Suscribir →</button></form>
+      <p class="subscribe__msg" id="subMsg"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="colophon wrap">
+  <div class="colophon__grid">
+    <div>
+      <h5 class="serif">BeautyHits</h5>
+      <p>El dossier de la belleza profesional. Las mejores marcas, financiamiento sin interés y despacho a todo Chile.</p>
+    </div>
+    <div><h6>Secciones</h6><a href="#">El Índice</a><a href="#">Marcas</a><a href="#">Rebajas</a><a href="#">Novedades</a></div>
+    <div><h6>Servicio</h6><a href="#">Contacto</a><a href="#">Envíos</a><a href="#">Términos</a><a href="#">Privacidad</a></div>
+    <div><h6>Redacción</h6><a href="#">hola@beautyhits.cl</a><a href="#">WhatsApp +56 9 1234 5678</a><a href="#">Instagram</a></div>
+  </div>
+  <div class="colophon__foot">
+    <span>© 2026 BeautyHits SpA · Edición Nº 01</span>
+    <span class="proto">Prototipo editorial — sin transacciones reales</span>
+  </div>
+</footer>
+
+<script>
+const CLP=n=>'$'+n.toLocaleString('es-CL');
+const items=[
+ {brand:'Dyson',name:'Airwrap™ Coanda 2x',price:599990,was:679990,img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=400&q=80'},
+ {brand:'Dyson',name:'Supersonic™ Secador',price:449990,was:null,img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=400&q=80'},
+ {brand:'GHD',name:'Platinum+ Plancha',price:269990,was:299990,img:'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=400&q=80'},
+ {brand:'Color Wow',name:'Dream Coat Anti-Frizz',price:34990,was:null,img:'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80'},
+ {brand:'Medicube',name:'Age-R Booster Pro',price:189990,was:219990,img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=400&q=80'},
+ {brand:'Osmo',name:'Blinding Shine Serum',price:18990,was:null,img:'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=400&q=80'},
+];
+document.getElementById('entries').innerHTML=items.map((p,i)=>`
+ <article class="entry">
+   <span class="entry__no serif">${String(i+1).padStart(2,'0')}</span>
+   <div><p class="entry__brand">${p.brand}</p><h4 class="entry__name serif">${p.name}</h4></div>
+   <div class="entry__price"><b>${CLP(p.price)}</b>${p.was?`<s>${CLP(p.was)}</s>`:''}<small>12× ${CLP(Math.round(p.price/12))} s/interés</small></div>
+   <img class="entry__peek" src="${p.img}" alt=""/>
+ </article>`).join('');
+document.getElementById('subForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('subMsg').textContent='Gracias — revisa tu correo para el código HITS10.';e.target.reset();});
+</script>
+</body>
+</html>

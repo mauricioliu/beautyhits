@@ -1,197 +1,89 @@
 <!DOCTYPE html>
 <!--
-  PROTOTYPE — BeautyHits homepage (throwaway)
-  Question: "What should the new store look like?" — a competitor to lpb.cl in a similar luxury-minimalist style.
-  Throwaway static mock. No real Shopify backend. Run: python3 -m http.server 8000  (see NOTES.md)
+  PROTOTYPE — BeautyHits variant switcher (throwaway).
+  Three radically different homepage directions, switchable via ?variant=a|b|c.
+  Each variant is a self-contained page in /variants. This shell just frames them + a floating switch bar.
 -->
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>BeautyHits — Belleza profesional. Tecnología que transforma.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>BeautyHits — Prototipos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#000;font-family:'Syne',system-ui,sans-serif}
+#stage{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
+
+.switch{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:99;
+  display:flex;align-items:center;gap:4px;padding:6px;border-radius:50px;
+  background:rgba(14,12,16,.82);backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 40px rgba(0,0,0,.5);
+  color:#fff;user-select:none}
+.switch__arrow{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;font-size:1.1rem;
+  background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;transition:.2s}
+.switch__arrow:hover{background:#d8a86b;color:#1a1410}
+.switch__label{padding:0 16px;min-width:178px;text-align:center}
+.switch__key{font-weight:800;font-size:.8rem;letter-spacing:.1em}
+.switch__name{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#b3a99c;margin-top:2px}
+.switch__dots{display:flex;gap:5px;margin-left:6px;padding-right:4px}
+.switch__dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:.2s}
+.switch__dots i.on{background:#d8a86b;width:18px;border-radius:6px}
+.switch__hint{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);z-index:99;color:rgba(255,255,255,.4);
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
+.tag{position:fixed;top:0;left:0;z-index:99;background:#df2c12;color:#fff;font-size:.56rem;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:700;padding:5px 12px;border-bottom-right-radius:10px;pointer-events:none}
+</style>
 </head>
 <body>
+<span class="tag">Prototipo · BeautyHits</span>
+<iframe id="stage" title="BeautyHits variant"></iframe>
 
-  <!-- ===== Promo bar ===== -->
-  <div class="promobar">
-    <div class="promobar__track" id="promoTrack">
-      <span>🚚 Envío gratis en todo Chile por compras sobre $50.000</span>
-      <span>💳 Hasta 12 cuotas sin interés</span>
-      <span>✨ -10% en tu primera compra con el código <b>HITS10</b></span>
-      <span>📦 Despacho en 24–48 hrs hábiles</span>
-    </div>
+<div class="switch">
+  <button class="switch__arrow" id="prev" aria-label="Anterior">‹</button>
+  <div class="switch__label">
+    <span class="switch__key" id="vKey">A</span>
+    <span class="switch__name" id="vName">Salon</span>
   </div>
+  <button class="switch__arrow" id="next" aria-label="Siguiente">›</button>
+  <div class="switch__dots" id="dots"></div>
+</div>
+<div class="switch__hint">← → para cambiar de diseño</div>
 
-  <!-- ===== Header ===== -->
-  <header class="header">
-    <div class="header__inner">
-      <button class="icon-btn header__burger" id="burger" aria-label="Menú">☰</button>
+<script>
+const VARIANTS=[
+  {key:'a',name:'Salon · minimal',file:'variants/a.html'},
+  {key:'b',name:'Editorial · revista',file:'variants/b.html'},
+  {key:'c',name:'Noir Chrome · luxe',file:'variants/c.html'},
+];
+const stage=document.getElementById('stage');
+const dotsWrap=document.getElementById('dots');
+VARIANTS.forEach(()=>{const i=document.createElement('i');dotsWrap.appendChild(i);});
+const dots=[...dotsWrap.children];
 
-      <nav class="nav" id="nav">
-        <a href="#">Dyson</a>
-        <a href="#">GHD</a>
-        <a href="#">Color Wow</a>
-        <a href="#">Osmo</a>
-        <a href="#">Medicube</a>
-        <a href="#" class="nav__sale">Ofertas</a>
-      </nav>
-
-      <a href="#" class="logo">BEAUTY<span>HITS</span></a>
-
-      <div class="header__icons">
-        <button class="icon-btn" aria-label="Buscar">🔍</button>
-        <button class="icon-btn" aria-label="Cuenta">👤</button>
-        <button class="icon-btn" aria-label="Favoritos">♡</button>
-        <button class="icon-btn cart" aria-label="Carro">🛍️<span class="cart__count" id="cartCount">0</span></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero__slides" id="heroSlides">
-      <article class="hero__slide is-active" style="--img:url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1600&q=80')">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Nueva temporada</p>
-          <h1>Potencia que transforma.<br/>Estilo que se multiplica.</h1>
-          <p class="hero__sub">Descubre el Dyson Airwrap™ y redefine tu rutina con tecnología profesional.</p>
-          <a href="#bestsellers" class="btn btn--light">Comprar ahora</a>
-        </div>
-      </article>
-      <article class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80')">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Lo nuevo llega primero a BeautyHits</p>
-          <h1>Color que dura.<br/>Brillo que enamora.</h1>
-          <p class="hero__sub">Color Wow y Osmo: cuidado profesional para tu cabello, en casa.</p>
-          <a href="#bestsellers" class="btn btn--light">Ver colección</a>
-        </div>
-      </article>
-      <article class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=80')">
-        <div class="hero__content">
-          <p class="hero__eyebrow">12 cuotas sin interés</p>
-          <h1>Invierte en ti.<br/>La belleza es para siempre.</h1>
-          <p class="hero__sub">Las mejores marcas profesionales, ahora con financiamiento sin interés.</p>
-          <a href="#bestsellers" class="btn btn--light">Descubrir</a>
-        </div>
-      </article>
-    </div>
-    <div class="hero__dots" id="heroDots"></div>
-  </section>
-
-  <!-- ===== Brand strip ===== -->
-  <section class="brandstrip">
-    <div class="brandstrip__track">
-      <span>DYSON</span><span>GHD</span><span>COLOR WOW</span><span>OSMO</span><span>MEDICUBE</span><span>CRAZY COLOR</span>
-      <span>DYSON</span><span>GHD</span><span>COLOR WOW</span><span>OSMO</span><span>MEDICUBE</span><span>CRAZY COLOR</span>
-    </div>
-  </section>
-
-  <!-- ===== Best sellers ===== -->
-  <section class="section" id="bestsellers">
-    <div class="section__head">
-      <h2>Best Sellers 🔥</h2>
-      <a href="#" class="section__link">Ver todo →</a>
-    </div>
-    <div class="grid" id="productGrid"><!-- filled by JS --></div>
-  </section>
-
-  <!-- ===== Collection cards ===== -->
-  <section class="section">
-    <div class="section__head"><h2>Compra por categoría</h2></div>
-    <div class="collections">
-      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=800&q=80')">
-        <span class="collection__label">Secadores</span>
-      </a>
-      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=800&q=80')">
-        <span class="collection__label">Moldeadores</span>
-      </a>
-      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80')">
-        <span class="collection__label">Color & Cuidado</span>
-      </a>
-      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80')">
-        <span class="collection__label">Skincare</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== Feature banner ===== -->
-  <section class="feature">
-    <div class="feature__img" style="--img:url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=80')"></div>
-    <div class="feature__text">
-      <p class="feature__eyebrow">Tecnología Dyson</p>
-      <h2>Cada accesorio,<br/>un estilo diferente.</h2>
-      <p>El Airwrap Coanda 2x™ seca, ondula y alisa sin calor extremo. Un solo equipo, infinitas posibilidades para tu look.</p>
-      <a href="#" class="btn btn--dark">Conocer más</a>
-    </div>
-  </section>
-
-  <!-- ===== Testimonials ===== -->
-  <section class="section section--center">
-    <div class="section__head section__head--center">
-      <p class="reviews__stars">★★★★★</p>
-      <h2>Lo que dicen nuestras clientas</h2>
-      <p class="reviews__count">Basado en +1.200 reseñas verificadas</p>
-    </div>
-    <div class="reviews" id="reviews"><!-- filled by JS --></div>
-  </section>
-
-  <!-- ===== Newsletter ===== -->
-  <section class="newsletter">
-    <div class="newsletter__inner">
-      <h2>Únete al club BeautyHits</h2>
-      <p>Suscríbete y recibe <b>10% de descuento</b> en tu primera compra, además de acceso anticipado a lanzamientos.</p>
-      <form class="newsletter__form" id="newsForm">
-        <input type="email" placeholder="Tu correo electrónico" required />
-        <button type="submit" class="btn btn--dark">Suscribirme</button>
-      </form>
-      <p class="newsletter__msg" id="newsMsg"></p>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="footer">
-    <div class="footer__cols">
-      <div class="footer__col footer__col--brand">
-        <a href="#" class="logo logo--footer">BEAUTY<span>HITS</span></a>
-        <p>Belleza profesional para todas. Las mejores marcas, financiamiento sin interés y despacho a todo Chile.</p>
-        <div class="footer__social">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="TikTok">TikTok</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <h4>Tienda</h4>
-        <a href="#">Best Sellers</a>
-        <a href="#">Marcas</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Novedades</a>
-      </div>
-      <div class="footer__col">
-        <h4>Ayuda</h4>
-        <a href="#">Contacto</a>
-        <a href="#">Envíos y devoluciones</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Política de privacidad</a>
-      </div>
-      <div class="footer__col">
-        <h4>Contacto</h4>
-        <a href="#">hola@beautyhits.cl</a>
-        <a href="#">WhatsApp: +56 9 1234 5678</a>
-        <p class="footer__pay">Webpay · Mercado Pago · 12 cuotas sin interés</p>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 BeautyHits SpA — Todos los derechos reservados.</span>
-      <span class="footer__proto">PROTOTIPO — diseño de referencia, sin transacciones reales</span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+function idxFromUrl(){
+  const v=(new URLSearchParams(location.search).get('variant')||'a').toLowerCase();
+  const i=VARIANTS.findIndex(x=>x.key===v);return i<0?0:i;
+}
+let cur=idxFromUrl();
+function render(){
+  const v=VARIANTS[cur];
+  stage.src=v.file;
+  document.getElementById('vKey').textContent=v.key.toUpperCase();
+  document.getElementById('vName').textContent=v.name;
+  dots.forEach((d,i)=>d.classList.toggle('on',i===cur));
+  const u=new URL(location.href);u.searchParams.set('variant',v.key);history.replaceState({},'',u);
+}
+function go(d){cur=(cur+d+VARIANTS.length)%VARIANTS.length;render();}
+document.getElementById('prev').onclick=()=>go(-1);
+document.getElementById('next').onclick=()=>go(1);
+addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft')go(-1);
+  if(e.key==='ArrowRight')go(1);
+});
+render();
+</script>
 </body>
 </html>

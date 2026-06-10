@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+  PROTOTYPE — BeautyHits homepage (throwaway)
+  Question: "What should the new store look like?" — a competitor to lpb.cl in a similar luxury-minimalist style.
+  Throwaway static mock. No real Shopify backend. Run: python3 -m http.server 8000  (see NOTES.md)
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>BeautyHits — Belleza profesional. Tecnología que transforma.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- ===== Promo bar ===== -->
+  <div class="promobar">
+    <div class="promobar__track" id="promoTrack">
+      <span>🚚 Envío gratis en todo Chile por compras sobre $50.000</span>
+      <span>💳 Hasta 12 cuotas sin interés</span>
+      <span>✨ -10% en tu primera compra con el código <b>HITS10</b></span>
+      <span>📦 Despacho en 24–48 hrs hábiles</span>
+    </div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <button class="icon-btn header__burger" id="burger" aria-label="Menú">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#">Dyson</a>
+        <a href="#">GHD</a>
+        <a href="#">Color Wow</a>
+        <a href="#">Osmo</a>
+        <a href="#">Medicube</a>
+        <a href="#" class="nav__sale">Ofertas</a>
+      </nav>
+
+      <a href="#" class="logo">BEAUTY<span>HITS</span></a>
+
+      <div class="header__icons">
+        <button class="icon-btn" aria-label="Buscar">🔍</button>
+        <button class="icon-btn" aria-label="Cuenta">👤</button>
+        <button class="icon-btn" aria-label="Favoritos">♡</button>
+        <button class="icon-btn cart" aria-label="Carro">🛍️<span class="cart__count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero__slides" id="heroSlides">
+      <article class="hero__slide is-active" style="--img:url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1600&q=80')">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Nueva temporada</p>
+          <h1>Potencia que transforma.<br/>Estilo que se multiplica.</h1>
+          <p class="hero__sub">Descubre el Dyson Airwrap™ y redefine tu rutina con tecnología profesional.</p>
+          <a href="#bestsellers" class="btn btn--light">Comprar ahora</a>
+        </div>
+      </article>
+      <article class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80')">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Lo nuevo llega primero a BeautyHits</p>
+          <h1>Color que dura.<br/>Brillo que enamora.</h1>
+          <p class="hero__sub">Color Wow y Osmo: cuidado profesional para tu cabello, en casa.</p>
+          <a href="#bestsellers" class="btn btn--light">Ver colección</a>
+        </div>
+      </article>
+      <article class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=80')">
+        <div class="hero__content">
+          <p class="hero__eyebrow">12 cuotas sin interés</p>
+          <h1>Invierte en ti.<br/>La belleza es para siempre.</h1>
+          <p class="hero__sub">Las mejores marcas profesionales, ahora con financiamiento sin interés.</p>
+          <a href="#bestsellers" class="btn btn--light">Descubrir</a>
+        </div>
+      </article>
+    </div>
+    <div class="hero__dots" id="heroDots"></div>
+  </section>
+
+  <!-- ===== Brand strip ===== -->
+  <section class="brandstrip">
+    <div class="brandstrip__track">
+      <span>DYSON</span><span>GHD</span><span>COLOR WOW</span><span>OSMO</span><span>MEDICUBE</span><span>CRAZY COLOR</span>
+      <span>DYSON</span><span>GHD</span><span>COLOR WOW</span><span>OSMO</span><span>MEDICUBE</span><span>CRAZY COLOR</span>
+    </div>
+  </section>
+
+  <!-- ===== Best sellers ===== -->
+  <section class="section" id="bestsellers">
+    <div class="section__head">
+      <h2>Best Sellers 🔥</h2>
+      <a href="#" class="section__link">Ver todo →</a>
+    </div>
+    <div class="grid" id="productGrid"><!-- filled by JS --></div>
+  </section>
+
+  <!-- ===== Collection cards ===== -->
+  <section class="section">
+    <div class="section__head"><h2>Compra por categoría</h2></div>
+    <div class="collections">
+      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=800&q=80')">
+        <span class="collection__label">Secadores</span>
+      </a>
+      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=800&q=80')">
+        <span class="collection__label">Moldeadores</span>
+      </a>
+      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80')">
+        <span class="collection__label">Color & Cuidado</span>
+      </a>
+      <a class="collection" style="--img:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80')">
+        <span class="collection__label">Skincare</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Feature banner ===== -->
+  <section class="feature">
+    <div class="feature__img" style="--img:url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=80')"></div>
+    <div class="feature__text">
+      <p class="feature__eyebrow">Tecnología Dyson</p>
+      <h2>Cada accesorio,<br/>un estilo diferente.</h2>
+      <p>El Airwrap Coanda 2x™ seca, ondula y alisa sin calor extremo. Un solo equipo, infinitas posibilidades para tu look.</p>
+      <a href="#" class="btn btn--dark">Conocer más</a>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section section--center">
+    <div class="section__head section__head--center">
+      <p class="reviews__stars">★★★★★</p>
+      <h2>Lo que dicen nuestras clientas</h2>
+      <p class="reviews__count">Basado en +1.200 reseñas verificadas</p>
+    </div>
+    <div class="reviews" id="reviews"><!-- filled by JS --></div>
+  </section>
+
+  <!-- ===== Newsletter ===== -->
+  <section class="newsletter">
+    <div class="newsletter__inner">
+      <h2>Únete al club BeautyHits</h2>
+      <p>Suscríbete y recibe <b>10% de descuento</b> en tu primera compra, además de acceso anticipado a lanzamientos.</p>
+      <form class="newsletter__form" id="newsForm">
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <button type="submit" class="btn btn--dark">Suscribirme</button>
+      </form>
+      <p class="newsletter__msg" id="newsMsg"></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__col footer__col--brand">
+        <a href="#" class="logo logo--footer">BEAUTY<span>HITS</span></a>
+        <p>Belleza profesional para todas. Las mejores marcas, financiamiento sin interés y despacho a todo Chile.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Tienda</h4>
+        <a href="#">Best Sellers</a>
+        <a href="#">Marcas</a>
+        <a href="#">Ofertas</a>
+        <a href="#">Novedades</a>
+      </div>
+      <div class="footer__col">
+        <h4>Ayuda</h4>
+        <a href="#">Contacto</a>
+        <a href="#">Envíos y devoluciones</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="#">hola@beautyhits.cl</a>
+        <a href="#">WhatsApp: +56 9 1234 5678</a>
+        <p class="footer__pay">Webpay · Mercado Pago · 12 cuotas sin interés</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BeautyHits SpA — Todos los derechos reservados.</span>
+      <span class="footer__proto">PROTOTIPO — diseño de referencia, sin transacciones reales</span>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
