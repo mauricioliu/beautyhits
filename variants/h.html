@@ -86,7 +86,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .p{position:relative;transition:.25s}
 .p:hover{transform:translateY(-5px)}
 .p__media{position:relative;aspect-ratio:3/3.6;border-radius:14px;overflow:hidden;margin-bottom:12px}
-.p__media img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.92}
+.p__media img{width:100%;height:100%;object-fit:cover}
 .p__wish{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#fff;border:none;cursor:pointer;font-size:.85rem;color:var(--magenta);z-index:2}
 .p__n{font-weight:700;font-size:.85rem;line-height:1.3}
 .p__v{color:var(--soft);font-size:.76rem;margin:2px 0 7px}
@@ -268,12 +268,12 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 <script>
 const CLP=n=>'$'+n.toLocaleString('es-CL');
 const P=[
- {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:1049990,w:1149990,bg:'#f3cdd8',img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=500&q=80'},
- {n:'Dyson Airstrait™ – Secado + Alisado',v:'Ceramic Pink / Rose Gold',p:679990,w:null,bg:'#c97a62',img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=500&q=80'},
- {n:'Dyson Airwrap i.d.™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:859990,w:1099990,bg:'#e8d3bb',img:'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=500&q=80'},
- {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Jasper Plum',p:999990,w:1149990,bg:'#5d3a52',img:'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=500&q=80'},
- {n:'Dyson Airstrait™ – Secado + Alisado',v:'Amber Silk',p:719990,w:null,bg:'#d9c2a5',img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80'},
- {n:'Dyson Supersonic™ Nural – Secador',v:'Pink / Rose Gold',p:699990,w:null,bg:'#e7b9c9',img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=500&q=80'},
+ {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:1049990,w:1149990,bg:'#f3cdd8',img:'../img/airwrap-pink.jpg'},
+ {n:'Dyson Airstrait™ – Secado + Alisado',v:'Ceramic Pink / Rose Gold',p:679990,w:null,bg:'#c97a62',img:'../img/airstrait-pink.webp'},
+ {n:'Dyson Airwrap i.d.™ – Liso + Ondulado',v:'Ceramic Pink / Rose Gold',p:859990,w:1099990,bg:'#e8d3bb',img:'../img/airwrap-id.webp'},
+ {n:'Dyson Airwrap™ Coanda 2x™ – Liso + Ondulado',v:'Jasper Plum',p:999990,w:1149990,bg:'#5d3a52',img:'../img/coanda-plum.jpg'},
+ {n:'Dyson Airstrait™ – Secado + Alisado',v:'Amber Silk',p:719990,w:null,bg:'#d9c2a5',img:'../img/airstrait-amber.jpg'},
+ {n:'Dyson Supersonic™ Nural – Secador',v:'Pink / Rose Gold',p:699990,w:null,bg:'#e7b9c9',img:'../img/supersonic-nural.webp'},
 ];
 document.getElementById('grid').innerHTML=P.map(x=>`
  <article class="p">

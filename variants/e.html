@@ -203,9 +203,9 @@ const QS=[
  {q:'¿Cuánto tiempo tienes en las mañanas?',opts:[['⏱️','Poquísimo','supersonic'],['🕐','Lo justo','airwrap'],['💆','Me gusta dedicarme','airstrait']]},
 ];
 const PROD={
- airwrap:{name:'Airwrap™ Coanda 2x™ – Liso + Ondulado',why:'Ondas y volumen con aire, no calor extremo. Ideal para cabello fino. $1.049.990 o 12 cuotas sin interés.',img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=400&q=80'},
- airstrait:{name:'Airstrait™ – Secado + Alisado',why:'Seca y alisa en un paso, incluso cabello grueso o con frizz. $679.990 o 12 cuotas sin interés.',img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=400&q=80'},
- supersonic:{name:'Supersonic™ Nural – Secador',why:'Secado ultra rápido con brillo. Perfecto si tienes mañanas apuradas. $699.990 o 12 cuotas.',img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=400&q=80'},
+ airwrap:{name:'Airwrap™ Coanda 2x™ – Liso + Ondulado',why:'Ondas y volumen con aire, no calor extremo. Ideal para cabello fino. $1.049.990 o 12 cuotas sin interés.',img:'../img/airwrap-pink.jpg'},
+ airstrait:{name:'Airstrait™ – Secado + Alisado',why:'Seca y alisa en un paso, incluso cabello grueso o con frizz. $679.990 o 12 cuotas sin interés.',img:'../img/airstrait-pink.webp'},
+ supersonic:{name:'Supersonic™ Nural – Secador',why:'Secado ultra rápido con brillo. Perfecto si tienes mañanas apuradas. $699.990 o 12 cuotas.',img:'../img/supersonic-nural.webp'},
 };
 let step=0;const score={airwrap:0,airstrait:0,supersonic:0};
 const optsEl=document.getElementById('opts'),barEl=document.getElementById('bar'),
@@ -231,9 +231,9 @@ renderStep();
 
 // product cards
 const CARDS=[
- {b:'Dyson',n:'Airwrap™ Coanda 2x™ Ceramic Pink',p:1049990,tag:'Best seller',img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=400&q=80'},
- {b:'Dyson',n:'Airstrait™ Ceramic Pink/Rose Gold',p:679990,tag:'Best seller',img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=400&q=80'},
- {b:'Dyson',n:'Supersonic™ Nural Pink/Rose Gold',p:699990,tag:'Nuevo',img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=400&q=80'},
+ {b:'Dyson',n:'Airwrap™ Coanda 2x™ Ceramic Pink',p:1049990,tag:'Best seller',img:'../img/airwrap-pink.jpg'},
+ {b:'Dyson',n:'Airstrait™ Ceramic Pink/Rose Gold',p:679990,tag:'Best seller',img:'../img/airstrait-pink.webp'},
+ {b:'Dyson',n:'Supersonic™ Nural Pink/Rose Gold',p:699990,tag:'Nuevo',img:'../img/supersonic-nural.webp'},
 ];
 document.getElementById('cards').innerHTML=CARDS.map(x=>`
  <article class="pc"><span class="pc__tag">${x.tag}</span>
