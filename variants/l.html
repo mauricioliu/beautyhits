@@ -31,8 +31,8 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 /* header */
 .hdr{position:sticky;top:0;z-index:50;background:rgba(255,253,251,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .hdr__in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;max-width:var(--maxw);margin:0 auto}
-.logo{font-family:'Libre Caslon Text',serif;font-weight:700;font-size:1.35rem;white-space:nowrap}
-.logo i{font-style:italic;color:var(--flamingo-d)}
+.logo{font-family:'Karla',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.34em;text-transform:uppercase;white-space:nowrap}
+.logo i{font-style:normal}
 .nav{display:flex;gap:24px;font-weight:600;font-size:.88rem}
 .nav a:hover{color:var(--flamingo-d)}
 .hdr__ic{display:flex;gap:14px;font-size:1rem;align-items:center}
@@ -46,13 +46,13 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .drawer__close{align-self:flex-end;border:none;background:var(--sand);width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer;margin-bottom:8px}
 
 /* hero — seasonal campaign */
-.hero{background:linear-gradient(140deg,var(--flamingo) 0%,var(--peach) 100%);position:relative;overflow:hidden}
+.hero{background:#fff;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .hero__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--maxw);margin:0 auto}
 .hero__l{padding:58px 18px}
-.hero__season{font-weight:700;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:#8a4a55;margin-bottom:16px}
+.hero__season{font-weight:700;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--flamingo-d);margin-bottom:16px}
 .hero h1{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.1}
 .hero h1 em{font-style:italic}
-.hero__p{color:#7c5a61;margin:18px 0 26px;max-width:380px;font-size:1.02rem;line-height:1.6}
+.hero__p{color:var(--soft);margin:18px 0 26px;max-width:380px;font-size:1.02rem;line-height:1.6}
 .hero__img{align-self:stretch;min-height:340px;position:relative}
 .hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
@@ -118,13 +118,13 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .e__b a{font-weight:700;font-size:.76rem;border-bottom:1px solid var(--ink);padding-bottom:2px}
 
 /* newsletter */
-.nl{text-align:center;padding:56px 0;background:var(--flamingo)}
-.nl h2{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.7rem,4.4vw,2.5rem);color:#5e2e38}
-.nl h2 em{font-style:italic}
-.nl p{color:#8a4a55;margin:12px 0 24px;font-weight:600}
+.nl{text-align:center;padding:56px 0;background:var(--sand);border-top:1px solid var(--line)}
+.nl h2{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.7rem,4.4vw,2.5rem);color:var(--ink)}
+.nl h2 em{font-style:italic;color:var(--flamingo-d)}
+.nl p{color:var(--soft);margin:12px 0 24px;font-weight:600}
 .nl form{display:flex;gap:10px;max-width:440px;margin:0 auto}
-.nl input{flex:1;border:1px solid #fff;background:#fff;border-radius:3px;padding:13px 16px;font-family:'Karla';outline:none;min-width:0}
-.nl__msg{margin-top:14px;color:#5e2e38;font-weight:700;min-height:20px;font-size:.86rem}
+.nl input{flex:1;border:1px solid var(--line);background:#fff;border-radius:3px;padding:13px 16px;font-family:'Karla';outline:none;min-width:0}
+.nl__msg{margin-top:14px;color:var(--ink);font-weight:700;min-height:20px;font-size:.86rem}
 
 /* footer */
 .ft{padding:46px 0 22px;background:var(--paper);border-top:1px solid var(--line)}

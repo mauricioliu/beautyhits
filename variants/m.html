@@ -7,7 +7,7 @@
 <title>BEAUTY HITS — Curaduría de belleza de nicho</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Marcellus&family=Pinyon+Script&display=swap" rel="stylesheet" />
 <style>
 :root{
   --ink:#171717; --soft:#8e8e8e; --paper:#ffffff; --gray:#f4f3f1;
@@ -45,22 +45,22 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .drawer__panel a{padding:15px 6px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;border-bottom:1px solid var(--line)}
 .drawer__close{align-self:flex-end;border:1px solid var(--line);background:#fff;width:38px;height:38px;font-size:1rem;cursor:pointer;margin-bottom:10px}
 
-/* hero — editorial brand story */
-.hero{border-bottom:1px solid var(--line)}
-.hero__in{display:grid;grid-template-columns:1.15fr .85fr;max-width:var(--maxw);margin:0 auto;min-height:62vh}
-.hero__img{position:relative}
-.hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.02)}
-.hero__b{padding:clamp(36px,5vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
-.hero__b .k{margin-bottom:22px}
-.hero h1{font-weight:300;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em}
-.hero h1 b{font-weight:800}
-.hero__p{color:var(--soft);margin:20px 0 30px;max-width:380px;line-height:1.7;font-size:.98rem}
+/* hero — full-bleed editorial photo, centered overlay (real Niche style) */
+.hero{border-bottom:1px solid var(--line);position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.02)}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12)}
+.hero__b{position:relative;z-index:2;text-align:center;color:#fff;padding:40px 22px;text-shadow:0 1px 22px rgba(0,0,0,.35)}
+.hero__b .k{color:#fff;display:block;margin-bottom:20px}
+.hero h1{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(2.2rem,6.4vw,4.4rem);line-height:1.06;letter-spacing:.08em;text-transform:uppercase}
+.hero .script{font-family:'Pinyon Script',cursive;font-size:clamp(1.6rem,4.4vw,2.8rem);display:block;text-transform:none;letter-spacing:0;margin-top:6px}
+.hero__p{margin:18px auto 28px;max-width:380px;line-height:1.7;font-size:.98rem}
+.hero .btn{text-shadow:none}
 
 /* just landed */
 .sec{padding:58px 0}
 .sec__head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:30px}
-.sec__head h2{font-weight:300;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:.01em}
-.sec__head h2 b{font-weight:800}
+.sec__head h2{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(1.5rem,3.8vw,2.3rem);letter-spacing:.03em}
+.sec__head h2 b{font-weight:400;font-style:italic}
 .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .p{background:#fff;padding:22px 18px;transition:.2s;position:relative}
 .p:hover{background:var(--gray)}
@@ -128,10 +128,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 @media(max-width:880px){
   .nav{display:none}.burger{display:block}
   .hdr__ic .hm{display:none}
-  .hero__in{grid-template-columns:1fr;min-height:auto}
-  .hero__img{min-height:300px;position:relative}
-  .hero__b{border-left:none;border-top:1px solid var(--line);text-align:center;align-items:center}
-  .hero__p{margin-left:auto;margin-right:auto}
+  .hero{min-height:58vh}
   .hero .btn{width:100%;max-width:340px}
   .pg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .pg::-webkit-scrollbar{display:none}
@@ -169,14 +166,12 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 </div>
 
 <section class="hero">
-  <div class="hero__in">
-    <div class="hero__img"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1100&q=80" alt="Historia de marca"/></div>
-    <div class="hero__b">
-      <span class="k">Historia de marca · Nº 04</span>
-      <h1>Menos ruido.<br/><b>Mejor belleza.</b></h1>
-      <p class="hero__p">No vendemos todo: vendemos lo que pasa nuestro filtro. Herramientas y fórmulas de nicho con resultados verificables.</p>
-      <a href="#new" class="btn">Explorar la selección</a>
-    </div>
+  <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1400&q=80" alt="Historia de marca"/>
+  <div class="hero__b">
+    <span class="k">Inspiración entrante · Nº 04</span>
+    <h1>Menos ruido<span class="script">y mejor belleza</span></h1>
+    <p class="hero__p">No vendemos todo: vendemos lo que pasa nuestro filtro. Fórmulas de nicho con resultados verificables.</p>
+    <a href="#new" class="btn">Explorar la selección</a>
   </div>
 </section>
 
