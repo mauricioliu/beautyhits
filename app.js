@@ -11,6 +11,10 @@ const products = [
   { brand: 'Dyson', name: 'Sérum Chitosan™ Post-Style', price: 89990, was: null, rating: 4.8, reviews: 64, badge: null, img: '../img/serum-chitosan.webp' },
   { brand: 'Medicube', name: 'AGE-R Booster Pro Mini (Blanco)', price: 159990, was: null, rating: 4.6, reviews: 88, badge: null, img: '../img/medicube-mini.webp' },
   { brand: 'Dyson', name: 'Set de 4 Pinzas para el Cabello', price: 99990, was: 109990, rating: 4.9, reviews: 167, badge: 'Oferta', img: '../img/pinzas.webp' },
+ { brand: 'GHD', name: 'ghd Platinum+ Styler – Plancha 1"', price: 455990, was: 599990, rating: 4.8, reviews: 143, badge: 'Oferta', img: '../img/ghd-platinum.webp' },
+ { brand: 'Color Wow', name: 'Dream Coat – Spray Anti-Frizz 500 ml', price: 69990, was: null, rating: 4.9, reviews: 421, badge: 'Best Seller', img: '../img/dreamcoat.jpg' },
+ { brand: 'Dyson', name: 'Kit Airwrap Coanda 2x + Airstrait™ (Pink/Rose Gold)', price: 1499990, was: 1899990, rating: 4.9, reviews: 41, badge: 'Kit', img: '../img/kit-dyson.webp' },
+ { brand: 'Crazy Color', name: 'Pinkissimo – Tinte Semipermanente', price: 9990, was: 14990, rating: 4.7, reviews: 234, badge: 'Oferta', img: '../img/crazy-pinkissimo.jpg' },
 ];
 
 // ---- Render products ----
