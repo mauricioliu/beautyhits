@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE — BeautyHits · Variant K "Cult" (throwaway). CultBeauty-inspired: editorial curation, champagne badges. Mobile-first. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beauty Hits — Curado por expertas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#1d1a17; --soft:#7d756c; --paper:#ffffff; --warm:#faf6f1;
+  --champ:#c3a36a; --champ-l:#efe4cf; --peach:#f6e3d9; --line:#ece5dc; --maxw:1220px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:.8rem;letter-spacing:.12em;
+  text-transform:uppercase;padding:14px 28px;cursor:pointer;border:1px solid var(--ink);transition:.2s;min-height:46px;background:var(--ink);color:#fff}
+.btn:hover{background:var(--champ);border-color:var(--champ)}
+.btn--ghost{background:transparent;color:var(--ink)}.btn--ghost:hover{background:var(--ink);color:#fff}
+.badge{display:inline-block;background:var(--champ-l);color:#8a6f3c;font-weight:700;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:5px 10px}
+
+/* top */
+.top{background:var(--ink);color:#fff;text-align:center;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px}
+.top b{color:var(--champ)}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;max-width:var(--maxw);margin:0 auto}
+.logo{font-weight:800;font-size:1.3rem;letter-spacing:.16em;text-transform:uppercase}
+.logo i{font-style:normal;color:var(--champ)}
+.nav{display:flex;gap:24px;font-weight:600;font-size:.85rem}
+.nav a:hover{color:var(--champ)}
+.hdr__ic{display:flex;gap:14px;font-size:1rem;align-items:center}
+.burger{display:none;border:none;background:none;font-size:1.3rem;cursor:pointer;padding:6px}
+.drawer{display:none;position:fixed;inset:0;z-index:60}
+.drawer.open{display:block}
+.drawer__bg{position:absolute;inset:0;background:rgba(29,26,23,.45)}
+.drawer__panel{position:absolute;top:0;left:0;bottom:0;width:min(78vw,310px);background:#fff;padding:22px;display:flex;flex-direction:column;gap:2px;animation:slide .22s ease}
+@keyframes slide{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+.drawer__panel a{padding:14px 8px;font-weight:600;border-bottom:1px solid var(--line);font-size:1rem}
+.drawer__close{align-self:flex-end;border:none;background:var(--warm);width:38px;height:38px;font-size:1rem;cursor:pointer;margin-bottom:8px}
+
+/* hero */
+.hero{background:var(--peach);position:relative;overflow:hidden}
+.hero__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--maxw);margin:0 auto}
+.hero__l{padding:56px 18px}
+.hero__l .badge{margin-bottom:18px}
+.hero h1{font-weight:300;font-size:clamp(2.1rem,5.4vw,3.8rem);line-height:1.08;letter-spacing:-.01em}
+.hero h1 b{font-weight:700}
+.hero__p{color:#6d6259;margin:18px 0 26px;max-width:400px;font-size:1.02rem;line-height:1.6}
+.hero__img{align-self:stretch;min-height:340px;position:relative}
+.hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* tabs sections */
+.sec{padding:50px 0}
+.sec__head{text-align:center;margin-bottom:26px}
+.sec__head h2{font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:.02em}
+.sec__head h2 b{font-weight:700}
+.sec__head p{color:var(--soft);margin-top:8px;font-size:.95rem}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:26px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:#fff;padding:10px 22px;font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s;font-family:'Albert Sans'}
+.tab.on,.tab:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.p{position:relative;transition:.25s}
+.p:hover{transform:translateY(-4px)}
+.p__media{position:relative;aspect-ratio:1/1.08;background:var(--warm);overflow:hidden;margin-bottom:12px}
+.p__media img{width:100%;height:100%;object-fit:cover;transition:.5s}.p:hover .p__media img{transform:scale(1.04)}
+.p__badge{position:absolute;top:10px;left:10px;z-index:2}
+.p__stars{color:var(--champ);font-size:.76rem;letter-spacing:.06em}.p__stars small{color:var(--soft)}
+.p__br{font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+.p__n{font-weight:400;font-size:.92rem;color:#574f47;margin:3px 0 7px;line-height:1.35}
+.p__price b{font-weight:700;font-size:.98rem}.p__price s{color:var(--soft);font-size:.78rem;margin-left:7px}
+.p__cta{margin-top:10px;width:100%;border:1px solid var(--ink);background:#fff;padding:11px;font-weight:700;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s;font-family:'Albert Sans'}
+.p__cta:hover{background:var(--ink);color:#fff}
+
+/* in focus tiles */
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.f{position:relative;overflow:hidden;background:var(--warm)}
+.f img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.f__b{padding:20px}
+.f__b .badge{margin-bottom:10px}
+.f__b h3{font-weight:700;font-size:1.15rem;line-height:1.2}
+.f__b p{color:var(--soft);font-size:.88rem;margin:7px 0 12px;line-height:1.5}
+.f__b a{font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--champ);padding-bottom:2px}
+
+/* spotlight */
+.spot{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.spot__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--maxw);margin:0 auto}
+.spot__img{align-self:stretch;min-height:320px;position:relative}
+.spot__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spot__b{padding:48px 28px}
+.spot__b .badge{margin-bottom:14px}
+.spot__b h2{font-weight:300;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.1}
+.spot__b h2 b{font-weight:700}
+.spot__b p{color:var(--soft);margin:14px 0 24px;max-width:400px;line-height:1.6}
+
+/* newsletter */
+.nl{text-align:center;padding:58px 0}
+.nl .badge{margin-bottom:14px}
+.nl h2{font-weight:300;font-size:clamp(1.7rem,4.4vw,2.6rem)}
+.nl h2 b{font-weight:700}
+.nl p{color:var(--soft);margin:12px 0 24px}
+.nl form{display:flex;max-width:440px;margin:0 auto;border:1px solid var(--ink)}
+.nl input{flex:1;border:none;padding:14px 16px;font-family:'Albert Sans';outline:none;min-width:0}
+.nl .btn{border:none;min-height:auto}
+.nl__msg{margin-top:14px;color:var(--champ);font-weight:700;min-height:20px;font-size:.85rem;letter-spacing:.06em}
+
+/* footer */
+.ft{background:var(--ink);color:#fff;padding:46px 0 22px}
+.ft__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;max-width:var(--maxw);margin:0 auto;padding:0 18px}
+.ft .logo{color:#fff;display:inline-block;margin-bottom:12px}
+.ft p,.ft a{display:block;color:#a59d93;font-size:.86rem;margin-bottom:9px}
+.ft a:hover{color:var(--champ)}
+.ft h4{font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.ft__bot{display:flex;justify-content:space-between;border-top:1px solid #36312b;margin-top:32px;padding:18px 18px 0;max-width:var(--maxw);
+  margin-left:auto;margin-right:auto;color:#a59d93;font-size:.76rem;flex-wrap:wrap;gap:8px}
+.ft__bot .proto{color:var(--champ)}
+
+/* MOBILE */
+@media(max-width:880px){
+  .nav{display:none}.burger{display:block}
+  .hdr__ic .hm{display:none}
+  .hero__in,.spot__in{grid-template-columns:1fr}
+  .hero__img{order:-1;min-height:250px}
+  .hero__l{padding:30px 18px 42px;text-align:center}
+  .hero__p{margin-left:auto;margin-right:auto}
+  .hero .btn{width:100%;max-width:340px}
+  .pg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pg::-webkit-scrollbar{display:none}
+  .pg .p{flex:0 0 62vw;max-width:250px;scroll-snap-align:start}
+  .focus{grid-template-columns:1fr}
+  .spot__img{min-height:240px}
+  .spot__b{padding:32px 18px;text-align:center}
+  .spot__b p{margin-left:auto;margin-right:auto}
+  .spot .btn{width:100%;max-width:340px}
+  .ft__grid{grid-template-columns:1fr 1fr}.ft__grid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:420px){
+  .nl form{flex-direction:column;border:none;gap:10px}
+  .nl input{border:1px solid var(--ink);min-height:48px}
+  .nl .btn{width:100%;border:1px solid var(--ink)}
+  .tabs{gap:6px}.tab{padding:9px 14px;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<div class="top">Hasta <b>12 cuotas sin interés</b> · Envío gratis sobre $50.000 · <b>-10%</b> con HITS10</div>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <button class="burger" id="burger" aria-label="Menú">☰</button>
+    <a href="#" class="logo">Beauty<i>·</i>Hits</a>
+    <nav class="nav"><a href="#shop">Nuevo</a><a href="#shop">Trending</a><a href="#focus">En foco</a><a href="#spot">Marcas</a><a href="#">Ofertas</a></nav>
+    <div class="hdr__ic"><span class="hm">🔍</span><span class="hm">👤</span><span>🛍️</span></div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="drawer__bg" id="drawerBg"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" id="drawerClose">✕</button>
+    <span class="logo" style="margin-bottom:12px">Beauty<i>·</i>Hits</span>
+    <a href="#shop">Nuevo</a><a href="#shop">Trending</a><a href="#focus">En foco</a><a href="#spot">Marcas</a><a href="#">Ofertas</a><a href="#">Mi cuenta</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero__in">
+    <div class="hero__l">
+      <span class="badge">Selección de expertas</span>
+      <h1>Lo que <b>de verdad</b><br/>funciona.</h1>
+      <p class="hero__p">Probamos cientos de productos para quedarnos solo con los que cumplen. Esta es nuestra curaduría.</p>
+      <a href="#shop" class="btn">Ver la selección</a>
+    </div>
+    <div class="hero__img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Curaduría Beauty Hits"/></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="shop">
+  <div class="sec__head"><h2><b>Nuestra</b> curaduría</h2><p>Elegidos a mano, probados de verdad.</p></div>
+  <div class="tabs">
+    <button class="tab on" data-f="all">Todo</button>
+    <button class="tab" data-f="new">Nuevo</button>
+    <button class="tab" data-f="sale">Oferta</button>
+    <button class="tab" data-f="exc">Exclusivo</button>
+  </div>
+  <div class="pg" id="grid"></div>
+</section>
+
+<section class="sec wrap" id="focus">
+  <div class="sec__head"><h2>En <b>foco</b></h2><p>Lo que estamos amando este mes.</p></div>
+  <div class="focus">
+    <article class="f"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="f__b"><span class="badge">Guía</span><h3>Cómo elegir tu herramienta de peinado</h3><p>Aire vs. calor, tipos de cabello y qué comprar primero.</p><a href="#">Leer ahora</a></div></article>
+    <article class="f"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="f__b"><span class="badge">Tendencia</span><h3>K-Beauty: la rutina que conquistó Chile</h3><p>Medicube y el boom del skincare coreano explicado.</p><a href="#">Leer ahora</a></div></article>
+    <article class="f"><img src="https://images.unsplash.com/photo-1512288094938-363287817259?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="f__b"><span class="badge">Lista</span><h3>En nuestra wishlist este mes</h3><p>Los 7 lanzamientos que el equipo quiere ya.</p><a href="#">Leer ahora</a></div></article>
+  </div>
+</section>
+
+<section class="spot" id="spot">
+  <div class="spot__in">
+    <div class="spot__img"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80" alt="Dyson en el spotlight"/></div>
+    <div class="spot__b">
+      <span class="badge">En el spotlight</span>
+      <h2><b>Dyson</b> Beauty</h2>
+      <p>La ingeniería que cambió el peinado en casa: del Airwrap al Supersonic Nural, toda la línea con garantía oficial.</p>
+      <a href="#shop" class="btn btn--ghost">Explorar la marca</a>
+    </div>
+  </div>
+</section>
+
+<section class="nl wrap">
+  <span class="badge">Newsletter</span>
+  <h2>Únete al <b>culto</b>.</h2>
+  <p>10% en tu primera compra + nuestra curaduría semanal en tu correo.</p>
+  <form id="nlForm"><input type="email" placeholder="tu@correo.cl" required/><button class="btn" type="submit">Suscribir</button></form>
+  <p class="nl__msg" id="nlMsg"></p>
+</section>
+
+<footer class="ft">
+  <div class="ft__grid">
+    <div><a href="#" class="logo">Beauty<i>·</i>Hits</a><p>Curaduría experta de belleza profesional. Garantía oficial, 12 cuotas sin interés y envío a todo Chile.</p></div>
+    <div><h4>Comprar</h4><a href="#">Nuevo</a><a href="#">Trending</a><a href="#">Marcas</a><a href="#">Ofertas</a></div>
+    <div><h4>Ayuda</h4><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div>
+    <div><h4>Nosotros</h4><a href="#">Quiénes somos</a><a href="#">Blog</a><a href="#">Términos</a></div>
+  </div>
+  <div class="ft__bot"><span>© 2026 BeautyHits SpA</span><span class="proto">Prototipo — sin transacciones reales</span></div>
+</footer>
+
+<script>
+const CLP=n=>'$'+n.toLocaleString('es-CL');
+const P=[
+ {b:'Dyson',n:'Airwrap™ Coanda 2x – Liso + Ondulado',p:599990,w:679990,f:'exc',badge:'Exclusivo',stars:312,img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=500&q=80'},
+ {b:'Color Wow',n:'Dream Coat Supernatural Spray',p:34990,w:null,f:'new',badge:'Nuevo',stars:421,img:'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=500&q=80'},
+ {b:'GHD',n:'Platinum+ Styler',p:269990,w:299990,f:'sale',badge:'-10%',stars:156,img:'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=500&q=80'},
+ {b:'Medicube',n:'Age-R Booster Pro',p:189990,w:219990,f:'sale',badge:'-14%',stars:88,img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80'},
+ {b:'Dyson',n:'Supersonic™ Nural Secador',p:449990,w:null,f:'new',badge:'Nuevo',stars:198,img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=500&q=80'},
+ {b:'Osmo',n:'Blinding Shine Serum',p:18990,w:null,f:'all',badge:null,stars:203,img:'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80'},
+ {b:'Dyson',n:'Corrale™ Styler',p:379990,w:419990,f:'sale',badge:'-10%',stars:134,img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=500&q=80'},
+ {b:'Color Wow',n:'Money Masque Tratamiento',p:29990,w:null,f:'exc',badge:'Exclusivo',stars:167,img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80'},
+];
+const grid=document.getElementById('grid');
+function render(f){
+  grid.innerHTML=P.filter(x=>f==='all'||x.f===f||(f==='new'&&x.f==='new')).map(x=>`
+   <article class="p">
+     <div class="p__media">${x.badge?`<span class="p__badge badge">${x.badge}</span>`:''}<img src="${x.img}" alt="${x.n}" loading="lazy"/></div>
+     <p class="p__stars">★★★★★ <small>(${x.stars})</small></p>
+     <p class="p__br">${x.b}</p><h3 class="p__n">${x.n}</h3>
+     <p class="p__price"><b>${CLP(x.p)}</b>${x.w?`<s>${CLP(x.w)}</s>`:''}</p>
+     <button class="p__cta">Añadir a la bolsa</button>
+   </article>`).join('');
+}
+render('all');
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(q=>q.classList.remove('on'));t.classList.add('on');render(t.dataset.f);
+});
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('nlMsg').textContent='Bienvenida al culto — revisa tu correo.';e.target.reset();});
+const drawer=document.getElementById('drawer');
+document.getElementById('burger').onclick=()=>drawer.classList.add('open');
+document.getElementById('drawerBg').onclick=()=>drawer.classList.remove('open');
+document.getElementById('drawerClose').onclick=()=>drawer.classList.remove('open');
+drawer.querySelectorAll('a').forEach(a=>a.onclick=()=>drawer.classList.remove('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE — BeautyHits · Variant L "NK" (throwaway). SpaceNK-inspired: calm premium, seasonal pastels, editorial. Mobile-first. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beauty Hits — Lujo accesible, curado con calma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#26211e; --soft:#8c8079; --paper:#fffdfb; --sand:#f7f1ea;
+  --flamingo:#f4c6cc; --flamingo-d:#d98a96; --peach:#f9dfc8; --pool:#cfe4e4;
+  --line:#eee5db; --maxw:1220px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.cas{font-family:'Libre Caslon Text',serif}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:.82rem;letter-spacing:.04em;
+  padding:14px 30px;border-radius:3px;cursor:pointer;border:1px solid var(--ink);transition:.2s;min-height:47px;background:var(--ink);color:#fff}
+.btn:hover{background:var(--flamingo-d);border-color:var(--flamingo-d)}
+.btn--ghost{background:transparent;color:var(--ink)}.btn--ghost:hover{background:var(--ink);color:#fff}
+
+/* top */
+.top{background:var(--flamingo);color:#6e3540;text-align:center;font-size:.76rem;font-weight:700;padding:9px 14px;letter-spacing:.04em}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,253,251,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;max-width:var(--maxw);margin:0 auto}
+.logo{font-family:'Libre Caslon Text',serif;font-weight:700;font-size:1.35rem;white-space:nowrap}
+.logo i{font-style:italic;color:var(--flamingo-d)}
+.nav{display:flex;gap:24px;font-weight:600;font-size:.88rem}
+.nav a:hover{color:var(--flamingo-d)}
+.hdr__ic{display:flex;gap:14px;font-size:1rem;align-items:center}
+.burger{display:none;border:none;background:none;font-size:1.3rem;cursor:pointer;padding:6px}
+.drawer{display:none;position:fixed;inset:0;z-index:60}
+.drawer.open{display:block}
+.drawer__bg{position:absolute;inset:0;background:rgba(38,33,30,.42)}
+.drawer__panel{position:absolute;top:0;left:0;bottom:0;width:min(78vw,310px);background:var(--paper);padding:22px;display:flex;flex-direction:column;gap:2px;animation:slide .22s ease}
+@keyframes slide{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+.drawer__panel a{padding:14px 8px;font-weight:600;border-bottom:1px solid var(--line)}
+.drawer__close{align-self:flex-end;border:none;background:var(--sand);width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer;margin-bottom:8px}
+
+/* hero — seasonal campaign */
+.hero{background:linear-gradient(140deg,var(--flamingo) 0%,var(--peach) 100%);position:relative;overflow:hidden}
+.hero__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--maxw);margin:0 auto}
+.hero__l{padding:58px 18px}
+.hero__season{font-weight:700;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:#8a4a55;margin-bottom:16px}
+.hero h1{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.1}
+.hero h1 em{font-style:italic}
+.hero__p{color:#7c5a61;margin:18px 0 26px;max-width:380px;font-size:1.02rem;line-height:1.6}
+.hero__img{align-self:stretch;min-height:340px;position:relative}
+.hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* services strip */
+.serv{background:var(--paper);border-bottom:1px solid var(--line)}
+.serv__in{display:grid;grid-template-columns:repeat(3,1fr);max-width:var(--maxw);margin:0 auto}
+.s__i{padding:17px;text-align:center;font-weight:600;font-size:.85rem;border-right:1px solid var(--line);color:#5d534c}
+.s__i:last-child{border-right:none}
+
+/* trending */
+.sec{padding:52px 0}
+.sec__head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.sec__head h2{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.6rem,4vw,2.4rem)}
+.sec__head h2 em{font-style:italic}
+.sec__head a{font-weight:700;font-size:.82rem;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.sec__head a:hover{color:var(--flamingo-d);border-color:var(--flamingo-d)}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.p{background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;transition:.25s}
+.p:hover{box-shadow:0 14px 34px rgba(38,33,30,.08);transform:translateY(-4px)}
+.p__media{position:relative;aspect-ratio:1/1;background:var(--sand);border-radius:4px;overflow:hidden;margin-bottom:12px}
+.p__media img{width:100%;height:100%;object-fit:cover}
+.p__tag{position:absolute;top:10px;left:10px;background:#fff;font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:2px;color:#8a4a55}
+.p__br{font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.p__n{color:#6d635c;font-size:.9rem;margin:3px 0 7px;line-height:1.35}
+.p__stars{color:var(--flamingo-d);font-size:.74rem}.p__stars small{color:var(--soft)}
+.p__row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.p__price{font-weight:700;font-size:.98rem}
+.p__add{border:1px solid var(--ink);background:#fff;border-radius:3px;padding:9px 14px;font-weight:700;font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;cursor:pointer;transition:.2s;font-family:'Karla'}
+.p__add:hover{background:var(--ink);color:#fff}
+
+/* brand spotlight */
+.spot{background:var(--pool)}
+.spot__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--maxw);margin:0 auto}
+.spot__img{align-self:stretch;min-height:330px;position:relative}
+.spot__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spot__b{padding:50px 28px}
+.spot__k{font-weight:700;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#3f6868;margin-bottom:14px}
+.spot__b h2{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.12}
+.spot__b h2 em{font-style:italic}
+.spot__b p{color:#48666а;color:#48666a;margin:14px 0 24px;max-width:400px;line-height:1.65}
+
+/* loyalty */
+.club{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.club__in{max-width:var(--maxw);margin:0 auto;padding:42px 18px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.club h3{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.4rem,3.4vw,2rem)}
+.club h3 em{font-style:italic;color:var(--flamingo-d)}
+.club p{color:var(--soft);margin-top:6px;max-width:440px}
+.club__pts{display:flex;gap:26px;flex-wrap:wrap}
+.club__pt{text-align:center}
+.club__pt b{font-family:'Libre Caslon Text';font-size:1.6rem;display:block}
+.club__pt small{font-weight:600;color:var(--soft);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* editorial */
+.edit__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.e{border-radius:6px;overflow:hidden;background:#fff;border:1px solid var(--line);transition:.25s}
+.e:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(38,33,30,.08)}
+.e img{width:100%;aspect-ratio:4/2.7;object-fit:cover}
+.e__b{padding:18px 20px 22px}
+.e__k{font-weight:700;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--flamingo-d)}
+.e__b h3{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:1.2rem;margin:8px 0;line-height:1.3}
+.e__b p{color:var(--soft);font-size:.88rem;line-height:1.55;margin-bottom:12px}
+.e__b a{font-weight:700;font-size:.76rem;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+/* newsletter */
+.nl{text-align:center;padding:56px 0;background:var(--flamingo)}
+.nl h2{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:clamp(1.7rem,4.4vw,2.5rem);color:#5e2e38}
+.nl h2 em{font-style:italic}
+.nl p{color:#8a4a55;margin:12px 0 24px;font-weight:600}
+.nl form{display:flex;gap:10px;max-width:440px;margin:0 auto}
+.nl input{flex:1;border:1px solid #fff;background:#fff;border-radius:3px;padding:13px 16px;font-family:'Karla';outline:none;min-width:0}
+.nl__msg{margin-top:14px;color:#5e2e38;font-weight:700;min-height:20px;font-size:.86rem}
+
+/* footer */
+.ft{padding:46px 0 22px;background:var(--paper);border-top:1px solid var(--line)}
+.ft__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;max-width:var(--maxw);margin:0 auto;padding:0 18px}
+.ft .logo{display:inline-block;margin-bottom:12px}
+.ft p,.ft a{display:block;color:var(--soft);font-size:.86rem;margin-bottom:9px}
+.ft a:hover{color:var(--flamingo-d)}
+.ft h4{font-weight:700;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.ft__bot{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:32px;padding:18px 18px 0;max-width:var(--maxw);
+  margin-left:auto;margin-right:auto;color:var(--soft);font-size:.76rem;flex-wrap:wrap;gap:8px}
+.ft__bot .proto{color:var(--flamingo-d)}
+
+/* MOBILE */
+@media(max-width:880px){
+  .nav{display:none}.burger{display:block}
+  .hdr__ic .hm{display:none}
+  .hero__in,.spot__in{grid-template-columns:1fr}
+  .hero__img{order:-1;min-height:250px}
+  .hero__l{padding:32px 18px 44px;text-align:center}
+  .hero__p{margin-left:auto;margin-right:auto}
+  .hero .btn{width:100%;max-width:340px}
+  .serv__in{grid-template-columns:1fr}
+  .s__i{border-right:none;border-bottom:1px solid var(--line);padding:13px}
+  .s__i:last-child{border-bottom:none}
+  .pg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pg::-webkit-scrollbar{display:none}
+  .pg .p{flex:0 0 64vw;max-width:255px;scroll-snap-align:start}
+  .spot__img{min-height:240px}
+  .spot__b{padding:32px 18px;text-align:center}
+  .spot__b p{margin-left:auto;margin-right:auto}
+  .spot .btn{width:100%;max-width:340px}
+  .club__in{flex-direction:column;text-align:center}
+  .edit__grid{grid-template-columns:1fr}
+  .ft__grid{grid-template-columns:1fr 1fr}.ft__grid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:420px){
+  .nl form{flex-direction:column}
+  .nl input{min-height:48px}.nl .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="top">Envío gratis sobre $50.000 · Hasta 12 cuotas sin interés · Devoluciones fáciles</div>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <button class="burger" id="burger" aria-label="Menú">☰</button>
+    <a href="#" class="logo">Beauty <i>Hits</i></a>
+    <nav class="nav"><a href="#shop">Novedades</a><a href="#shop">Trending</a><a href="#spot">Marcas</a><a href="#edit">Inside Hits</a><a href="#club">Club</a></nav>
+    <div class="hdr__ic"><span class="hm">🔍</span><span class="hm">♡</span><span>🛍️</span></div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="drawer__bg" id="drawerBg"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" id="drawerClose">✕</button>
+    <span class="logo" style="margin-bottom:12px">Beauty <i>Hits</i></span>
+    <a href="#shop">Novedades</a><a href="#shop">Trending</a><a href="#spot">Marcas</a><a href="#edit">Inside Hits</a><a href="#club">Club Hits</a><a href="#">Mi cuenta</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero__in">
+    <div class="hero__l">
+      <p class="hero__season">Temporada · Rosa Flamenco</p>
+      <h1 class="cas">El verano se peina <em>en rosa.</em></h1>
+      <p class="hero__p">Nuestra edición de temporada: herramientas y rituales en tonos que se sienten como vacaciones.</p>
+      <a href="#shop" class="btn">Comprar la edición</a>
+    </div>
+    <div class="hero__img"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80" alt="Edición Rosa Flamenco"/></div>
+  </div>
+</section>
+
+<div class="serv">
+  <div class="serv__in">
+    <div class="s__i">🚚 Despacho 24–48 hrs a todo Chile</div>
+    <div class="s__i">↺ Devoluciones fáciles 30 días</div>
+    <div class="s__i">✦ Garantía oficial en cada producto</div>
+  </div>
+</div>
+
+<section class="sec wrap" id="shop">
+  <div class="sec__head"><h2 class="cas">Trending <em>esta semana</em></h2><a href="#">Ver todo</a></div>
+  <div class="pg" id="grid"></div>
+</section>
+
+<section class="spot" id="spot">
+  <div class="spot__in">
+    <div class="spot__img"><img src="https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=900&q=80" alt="Marca destacada"/></div>
+    <div class="spot__b">
+      <p class="spot__k">Marca destacada</p>
+      <h2 class="cas">Dyson, <em>de cerca.</em></h2>
+      <p>Conversamos con estilistas sobre por qué la ingeniería Dyson cambió el peinado en casa — y qué herramienta va contigo.</p>
+      <a href="#shop" class="btn btn--ghost">Descubrir la marca</a>
+    </div>
+  </div>
+</section>
+
+<section class="club" id="club">
+  <div class="club__in">
+    <div>
+      <h3 class="cas">Club <em>Hits</em></h3>
+      <p>Acumula puntos en cada compra y canjéalos por productos, ediciones limitadas y experiencias.</p>
+    </div>
+    <div class="club__pts">
+      <div class="club__pt"><b class="cas">1pt</b><small>por cada $1.000</small></div>
+      <div class="club__pt"><b class="cas">2×</b><small>puntos en tu cumpleaños</small></div>
+      <div class="club__pt"><b class="cas">VIP</b><small>preventas exclusivas</small></div>
+    </div>
+    <a href="#" class="btn">Unirme gratis</a>
+  </div>
+</section>
+
+<section class="sec wrap" id="edit">
+  <div class="sec__head"><h2 class="cas">Inside <em>Hits</em></h2><a href="#">Ver el blog</a></div>
+  <div class="edit__grid">
+    <article class="e"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="e__b"><span class="e__k">Rituales</span><h3 class="cas">La rutina de 10 minutos que sí funciona</h3><p>Peinado express sin sacrificar el brillo, según nuestras estilistas.</p><a href="#">Leer</a></div></article>
+    <article class="e"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="e__b"><span class="e__k">Guía de compra</span><h3 class="cas">Airwrap vs. Airstrait: ¿cuál va contigo?</h3><p>Las diferencias reales explicadas sin tecnicismos.</p><a href="#">Leer</a></div></article>
+    <article class="e"><img src="https://images.unsplash.com/photo-1512288094938-363287817259?auto=format&fit=crop&w=700&q=80" alt=""/>
+      <div class="e__b"><span class="e__k">Comunidad</span><h3 class="cas">Clientas reales, resultados reales</h3><p>Tres historias de transformación con productos de la tienda.</p><a href="#">Leer</a></div></article>
+  </div>
+</section>
+
+<section class="nl">
+  <div class="wrap">
+    <h2 class="cas">Belleza en tu correo, <em>con calma.</em></h2>
+    <p>10% en tu primera compra + nuestra edición semanal.</p>
+    <form id="nlForm"><input type="email" placeholder="tu@correo.cl" required/><button class="btn" type="submit">Suscribirme</button></form>
+    <p class="nl__msg" id="nlMsg"></p>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ft__grid">
+    <div><a href="#" class="logo">Beauty <i>Hits</i></a><p>Lujo accesible y curado con calma. Las mejores marcas de belleza profesional, en Chile.</p></div>
+    <div><h4>Comprar</h4><a href="#">Novedades</a><a href="#">Trending</a><a href="#">Marcas</a><a href="#">Ofertas</a></div>
+    <div><h4>Ayuda</h4><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div>
+    <div><h4>Club Hits</h4><a href="#">Cómo funciona</a><a href="#">Mis puntos</a><a href="#">Beneficios</a></div>
+  </div>
+  <div class="ft__bot"><span>© 2026 BeautyHits SpA</span><span class="proto">Prototipo — sin transacciones reales</span></div>
+</footer>
+
+<script>
+const CLP=n=>'$'+n.toLocaleString('es-CL');
+const P=[
+ {b:'Dyson',n:'Airwrap™ Coanda 2x – Ceramic Pink',p:599990,tag:'Edición rosa',stars:312,img:'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=500&q=80'},
+ {b:'Color Wow',n:'Dream Coat Supernatural Spray',p:34990,tag:'Trending',stars:421,img:'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=500&q=80'},
+ {b:'Medicube',n:'Age-R Booster Pro',p:189990,tag:null,stars:88,img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80'},
+ {b:'GHD',n:'Platinum+ Styler',p:269990,tag:null,stars:156,img:'https://images.unsplash.com/photo-1620331317314-7c5f4e2e93b2?auto=format&fit=crop&w=500&q=80'},
+ {b:'Dyson',n:'Supersonic™ Nural – Pink',p:449990,tag:'Edición rosa',stars:198,img:'https://images.unsplash.com/photo-1599387737838-3a2f0e0a2b5e?auto=format&fit=crop&w=500&q=80'},
+ {b:'Osmo',n:'Blinding Shine Serum',p:18990,tag:null,stars:203,img:'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80'},
+ {b:'Dyson',n:'Corrale™ Styler',p:379990,tag:null,stars:134,img:'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=500&q=80'},
+ {b:'Color Wow',n:'Money Masque',p:29990,tag:'Trending',stars:167,img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80'},
+];
+document.getElementById('grid').innerHTML=P.map(x=>`
+ <article class="p">
+   <div class="p__media">${x.tag?`<span class="p__tag">${x.tag}</span>`:''}<img src="${x.img}" alt="${x.n}" loading="lazy"/></div>
+   <p class="p__br">${x.b}</p><p class="p__n">${x.n}</p>
+   <p class="p__stars">★★★★★ <small>(${x.stars})</small></p>
+   <div class="p__row"><span class="p__price">${CLP(x.p)}</span><button class="p__add">Añadir</button></div>
+ </article>`).join('');
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('nlMsg').textContent='Lista — revisa tu correo para tu 10%.';e.target.reset();});
+const drawer=document.getElementById('drawer');
+document.getElementById('burger').onclick=()=>drawer.classList.add('open');
+document.getElementById('drawerBg').onclick=()=>drawer.classList.remove('open');
+document.getElementById('drawerClose').onclick=()=>drawer.classList.remove('open');
+drawer.querySelectorAll('a').forEach(a=>a.onclick=()=>drawer.classList.remove('open'));
+</script>
+</body>
+</html>

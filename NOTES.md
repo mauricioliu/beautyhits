@@ -46,6 +46,12 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 | **G — Blush** | `variants/g.html` | Rosa pastel muy redondeado (recreación de una imagen de referencia del cliente): hero panel rosa + foto, trust badges, "Nuestras marcas", Best Sellers en cards blush, banda de tecnología, 3 cards de categoría (peach/lilac/mint). Plus Jakarta Sans. |
 | **H — Glam Pop** | `variants/h.html` | Recreación de la 2ª imagen de referencia (WhatsApp 2026-06-10): top bar y footer **negros**, hero **magenta** con titular en bloques negros estilo sticker (Anton), títulos brush (Permanent Marker), Best Sellers sobre fondos de color con nomenclatura Dyson real, banda negra "Tecnología que cambia tu rutina", cards de categoría con overlay de color, newsletter negra. |
 | **I — Blush Glam** | `variants/i.html` | Recreación de la 3ª imagen de referencia: misma estructura de H pero en **rosa suave** — itálicas serif elegantes (Fraunces), flores acuarela en CSS, banda de tecnología rosa, footer claro. **Mobile-first**: menú drawer funcional, Best Sellers como carrusel scroll-snap, trust 2×2, CTAs a ancho completo. |
+| **J — Bay** | `variants/j.html` | Inspirada en **beautybay.com** (Gen-Z bold): lima eléctrico + rosa vivo sobre blanco/negro, bordes duros 2px, stickers rotados, ticker marquee, scroller de pills de categorías, "drop de la semana" con countdown, grilla por vibra. Archivo Black + Public Sans. |
+| **K — Cult** | `variants/k.html` | Inspirada en **cultbeauty.com** (curaduría editorial): blanco cálido, badges champagne (Nuevo/Exclusivo/-10%), peso 300/700 contrastado, tabs con filtro funcional, sección "En foco", marca en spotlight, "Únete al culto". Albert Sans. |
+| **L — NK** | `variants/l.html` | Inspirada en **spacenk.com** (lujo calmado): campaña de temporada "Rosa Flamenco", serif Caslon + Karla, pasteles (flamingo/durazno/piscina), club de fidelidad "Club Hits", blog "Inside Hits". |
+| **M — Niche** | `variants/m.html` | Inspirada en **niche-beauty.com** (minimal high-fashion): blanco/gris, grillas con bordes 1px, badge "Hits Approved", historia de marca como hero, categorías tipográficas, Magazine integrado, CTAs de texto subrayado. Manrope 300/800. |
+
+**Todas J–M son mobile-first**: drawer funcional, carruseles scroll-snap para productos, CTAs full-width, grillas que colapsan, tap targets ≥44px. Verificadas con screenshots a 390px.
 
 Variantes A–C nacen de **lpb.cl** (lujo minimalista). D–F nacen de **dropbe.pe** (DTC joven). G recrea una **imagen de referencia** (estilo rosa blush).
 
