@@ -53,6 +53,14 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 
 **Todas J–M son mobile-first**: drawer funcional, carruseles scroll-snap para productos, CTAs full-width, grillas que colapsan, tap targets ≥44px. Verificadas con screenshots a 390px.
 
+## Catálogo (2026-06-10)
+Todas las variantes usan ahora el **inventario real de lpb.cl** (nombres y precios exactos
+del scrape de hoy): Airwrap Coanda 2x $1.049.990 (antes $1.490.990), Airstrait $679.990
+(antes $999.990), Airwrap i.d. $859.990, Coanda 2x Jasper Plum $999.990, Supersonic Nural
+$699.990, Sérum Chitosan $89.990, Medicube AGE-R Pro Mini $159.990, Set 4 Pinzas $99.990.
+Marcas: Color Wow · Crazy Color · Osmo · Dyson Hair · Dyson Home · Medicube · GHD.
+El branding es siempre **Beauty Hits** (empresa nueva). Las fotos siguen siendo placeholders.
+
 ## Validación de fidelidad (2026-06-10)
 Se capturaron screenshots móviles reales de los 4 sitios fuente y se compararon contra las variantes:
 - **J**: la 1ª versión (lima/rosa neo-brutalista) NO se parecía al BeautyBay real (fotografía-led, monocromo). **Rediseñada** → hero foto a sangre, tiles de campaña, pills/botones blanco-negro.
