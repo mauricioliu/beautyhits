@@ -53,6 +53,13 @@ La home (`index.html`) ahora es un **shell** con iframe + barra flotante para al
 
 **Todas J–M son mobile-first**: drawer funcional, carruseles scroll-snap para productos, CTAs full-width, grillas que colapsan, tap targets ≥44px. Verificadas con screenshots a 390px.
 
+## Validación de fidelidad (2026-06-10)
+Se capturaron screenshots móviles reales de los 4 sitios fuente y se compararon contra las variantes:
+- **J**: la 1ª versión (lima/rosa neo-brutalista) NO se parecía al BeautyBay real (fotografía-led, monocromo). **Rediseñada** → hero foto a sangre, tiles de campaña, pills/botones blanco-negro.
+- **K**: ajustada de champagne/durazno → **blanco/negro alto contraste** + acento serif itálico (Playfair), headers en mayúsculas, bloque de registro negro (como el real).
+- **L**: Space NK bloquea captura headless; ajustada según análisis de texto + identidad de marca → fondo blanco-dominante, pastel solo como acento, logo sans tracked.
+- **M**: tipografía corregida → serif Marcellus en mayúsculas + script Pinyon como acento, hero foto centrado (composición editorial del real).
+
 Variantes A–C nacen de **lpb.cl** (lujo minimalista). D–F nacen de **dropbe.pe** (DTC joven). G recrea una **imagen de referencia** (estilo rosa blush).
 
 Links directos:
